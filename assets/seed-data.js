@@ -112,33 +112,154 @@ export const SEED_DATA = {
     stanovy: {
       content: `<div class="pull-card" style="margin-bottom:24px;">
   <h4>Úvodné ustanovenie</h4>
-  <p>Rybárske združenie Záhumnie – Veľké Orvište je združenie občanov založené v súlade so Zákonom č. 83/90 Zb. o združovaní občanov. Združuje občanov Veľkého Orvišťa a ich priateľov, ktorých spája spoločný záujem o zachovanie a ochranu genofondu rýb, využívanie rybárskeho práva, ochranu prírody a životného prostredia.</p>
+  <p>Rybárske združenie Záhumnie – Veľké Orvište je združenie občanov založené v súlade so Zákonom č. 83/90 Zb. o združovaní občanov. Združuje občanov Veľkého Orvišťa a ich priateľov, ktorých spája spoločný záujem o:</p>
+  <p>a) súhrn činností zameraných na zachovanie, zveľaďovanie a ochranu genofondu rýb,<br>
+  b) využívanie rybárskeho práva v súlade so zákonom o rybárstve,<br>
+  c) ochranu prírody a životného prostredia na úseku rybárstva,<br>
+  d) starostlivosť, ekológiu vôd a okolitej prírody vodných tokov v katastrálnom území Veľké Orvište.</p>
+  <p>Vo vnútri i navonok združenie presadzuje základné princípy spolupráce, vzájomnej pomoci, tolerancie a porozumenia v duchu demokracie. Združenie sa riadi zásadami kolektívneho vedenia a rozhodovania, pri zachovaní demokracie a disciplíny.</p>
 </div>
+
 <div class="pull-card" style="margin-bottom:24px;">
   <h4>Názov, sídlo a územná pôsobnosť</h4>
-  <p>Názov organizácie: <b>Rybárske združenie Záhumnie – Veľké Orvište</b><br>Sídlo zväzu: Hlavná 17, 922 01 Veľké Orvište, okr. Piešťany<br>Pôsobnosť zväzu sa vzťahuje na katastrálne územie Veľkého Orvišťa.</p>
+  <p>Názov organizácie: <b>Rybárske združenie Záhumnie – Veľké Orvište</b><br>
+  Sídlo zväzu: Hlavná 17, 922 01 Veľké Orvište, okr. Piešťany<br>
+  Pôsobnosť zväzu sa vzťahuje na katastrálne územie Veľkého Orvišťa.</p>
 </div>
+
 <div class="pull-card" style="margin-bottom:24px;">
-  <h4>Členstvo a orgány združenia</h4>
-  <p>Členstvo je dobrovoľné, od 18 rokov veku. Orgány: Členská schôdza (najvyšší orgán), Výkonný výbor (predseda, podpredseda, tajomník, sekretár, finančný hospodár), Revízna komisia (traja členovia).</p>
+  <h4>Poslanie a ciele združenia</h4>
+  <ol style="padding-left:18px; font-size:.95rem; color:var(--ink);">
+    <li>Cieľom združenia je súhrn činností zameraných na zachovanie, zveľaďovanie a ochranu genofondu rýb.</li>
+    <li>Prispievať k racionálnemu využívaniu a zveľaďovaniu prírodných zdrojov v oblasti rybárstva, k ochrane a tvorbe zdravého životného prostredia, ako aj k zlepšeniu ekológie vodných tokov a ostatných vodných plôch z hľadiska rybárskych záujmov.</li>
+    <li>Zostavovať plán hospodárenia.</li>
+    <li>Zarybňovanie spravovaného revíru v súlade so zákonom o rybárstve.</li>
+    <li>Zabezpečovať ochranu rýb a iných vodných živočíchov a ochranu rybárskeho práva v rybárskom revíre.</li>
+    <li>Viesť evidenciu o úlovkoch, vydať rybársky poriadok v revíre.</li>
+    <li>Hospodáriť s vlastným majetkom.</li>
+    <li>V oblasti rekreačného a športového rybárstva sa zúčastňovať a organizovať podujatia (preteky, semináre, akcie).</li>
+    <li>Starať sa o kultúrnu a odbornú výchovu členov združenia, poskytovať im pomoc v ich záujmovej rybárskej činnosti a uplatňovaní osobných záľub v záujme umožnenia aktívneho odpočinku.</li>
+  </ol>
 </div>
+
+<div class="pull-card" style="margin-bottom:24px;">
+  <h4>Členstvo</h4>
+  <p>1. Členstvo v združení je dobrovoľné.</p>
+  <p>2. Členom sa môže stať občan Slovenskej republiky (ďalej len občan), ktorý dovŕšil 18 rokov veku a spĺňa tieto podmienky:</p>
+  <p>a) súhlasí so stanovami občianskeho združenia a zaväzuje sa nimi riadiť,<br>
+  b) stotožňuje sa s úlohami občianskeho združenia a aktívne sa zúčastňuje na ich realizácii,<br>
+  c) s úspechom absolvuje školenia a skúšky zo základných rybárskych predpisov a preukáže dostatočne rybárske znalosti,<br>
+  d) nedopustil sa v posledných troch rokoch úmyselného trestného činu, za ktorý bol právoplatne odsúdený, nedopustil sa závažného priestupku proti predpisom o rybárstve (pytliactvo a pod.) čo potvrdí čestným prehlásením.</p>
+  <p>3. Za člena združenia prijíma výkonný výbor združenia na základe písomnej prihlášky záujemcu. Členstvo vzniká prijatím a zaplatením zápisného a členského príspevku. Proti neprijatiu za člena združenia sa môže záujemca písomne odvolať na členskú schôdzu združenia.</p>
+  <p>4. Práva člena združenia:<br>
+  a) podieľať sa na činnosti združenia<br>
+  b) voliť a byť volený do orgánov združenia<br>
+  c) obracať sa na orgány združenia s podnetmi a stanoviskami<br>
+  d) byť informovaný o činnosti a o rozhodnutiach orgánov združenia.</p>
+  <p>5. Povinnosti člena združenia<br>
+  a) dodržiavať stanovy združenia<br>
+  b) pomáhať pri plnení cieľov združenia a aktívne sa podieľať na jeho práci<br>
+  c) platiť členské príspevky<br>
+  d) ochraňovať a zveľaďovať majetok združenia.</p>
+  <p>6. Člen môže požiadať vedenie združenia o prerušenie členstva, alebo jeho pozastavenie najviac však na dobu dvoch rokov.</p>
+  <p>7. Za prerušenie členstva sa považuje aj dočasné pozastavenie členstva z disciplinárnych dôvodov.</p>
+  <p>8. Obnovenie členstva po uplynutí doby prerušenia členstva a uplynutie doby dočasného pozastavenia sa nepovažuje za nové prijatie a člen nemusí platiť zápisné. Do 15 dní po uplynutí lehoty je však povinný zaplatiť členský príspevok a splniť členské povinnosti za príslušný kalendárny rok, inak mu členstvo zaniká.</p>
+  <p>9. Členstvo v združení zaniká:<br>
+  a) vystúpením člena,<br>
+  b) vylúčením člena,<br>
+  c) úmrtím člena,<br>
+  d) zánikom združenia.</p>
+</div>
+
+<div class="pull-card" style="margin-bottom:24px;">
+  <h4>Orgány združenia</h4>
+  <p><b>1. Najvyšší orgán - členská schôdza.</b> Tvoria ju všetci členovia združenia.<br>
+  a) rozhoduje o zániku združenia,<br>
+  b) schvaľuje stanovy, ich zmeny a doplnky,<br>
+  c) schvaľuje plán činnosti a výročnú správu,<br>
+  d) schvaľuje rozpočet a správu o hospodárení,<br>
+  e) volí a odvoláva členov výkonného výboru, predsedu združenia,<br>
+  f) schvaľuje prijatie nových členov.</p>
+  <p><b>2. Výkonný výbor</b> – predseda, podpredseda, tajomník, sekretár, finančný hospodár:<br>
+  a) riadi činnosť združenia,<br>
+  b) zvoláva a obsahovo pripravuje členskú schôdzu,<br>
+  c) koná v mene združenia a to tak, že v mene združenia konajú vždy dvaja členovia výkonného výboru, pričom jedným z nich, vždy musí byť predseda združenia.</p>
+  <p><b>3. Revízna komisia</b> – traja členovia:<br>
+  a) je kontrolným orgánom združenia, zodpovedá sa najvyššiemu orgánu združenia,<br>
+  b) kontroluje hospodárenie združenia,<br>
+  c) kontroluje dodržiavanie stanov a vnútorných predpisov.</p>
+</div>
+
+<div class="pull-card" style="margin-bottom:24px;">
+  <h4>Zásady hospodárenia</h4>
+  <p>1. Združenie hospodári s vlastným majetkom a môže tiež hospodáriť s hnuteľným a nehnuteľným majetkom, ktorý prevzal do dočasného užívania.</p>
+  <p>2. Združenie je povinné hospodáriť tak, aby riadne plnilo svoje úlohy a plne krylo výdavky z vlastných príjmov alebo z pridelených finančných prostriedkov.</p>
+  <p>3. Finančné prostriedky na plnenie svojich úloh združenie získava: z členských príspevkov a zápisného, z príjmov za povolenia na rybolov, z príjmov rôznych akcií, z darov a iných prímov.</p>
+  <p>4. Základným predpisom pre nakladanie s finančnými prostriedkami je rozpočet schválený členskou schôdzou združenia.</p>
+  <p>5. Výnosy z majetku a vlastnej činnosti, môžu byť použité len na podporu cieľov združenia. V záujme vytvárania vlastných zdrojov môže združenie vykonávať v doplnkovom rozsahu činnosť vo vzťahu k záujmovej činnosti, súvisiacu so zabezpečením cieľov združenia.</p>
+</div>
+
 <div class="pull-card">
-  <h4>Hospodárenie a zánik</h4>
-  <p>Združenie hospodári s vlastným majetkom z členských príspevkov, povolení na rybolov a darov. O zániku rozhoduje členská schôdza trojpätinovou väčšinou.</p>
+  <h4>Zánik združenia</h4>
+  <p>O zániku združenia rozhoduje členská schôdza trojpätinovou väčšinou prítomných členov schôdze. Menuje likvidátora, ktorý vyrovná všetky záväzky a pohľadávky a s likvidačným zostatkom naloží podľa rozhodnutia členskej schôdze združenia. Zánik združenia treba oznámiť do 15 dní po ukončení likvidácie Ministerstvu vnútra Slovenskej republiky.</p>
 </div>`,
     },
     poriadok: {
       content: `<div class="pull-card" style="margin-bottom:24px;">
   <h4>Článok 1 — Všeobecné zásady</h4>
-  <p style="font-size:.93rem;">Každý, kto loví ryby, musí mať pri sebe povolenie. Loviť sa smie max. na dve udice (do 3 m od seba). Denný limit: 2 ks ušľachtilých rýb (max 7 kg), alebo 4 ks lososovitých, alebo 3 kg bielej ryby. Kapor nad 65 cm sa vracia späť. Sumec sa musí vždy privlastniť. Stanovené miery: kapor 45–65 cm, zubáč 50 cm, šťuka 60 cm, pstruh 25 cm, amur 70 cm.</p>
+  <p style="font-size:.93rem;">1. Každý kto loví ryby a iné vodné živočíchy musí mať pri sebe povolenie na rybolov miestneho rybárskeho združenia.<br>
+  2. Loviť sa smie maximálne na dve udice, vzdialené od seba max 3 metre.<br>
+  3. Loviaci musí mať osvetlené miesto lovu bezprostredne po zotmení.<br>
+  4. Loviaci si môže privlastniť v jednom dni lovu najviac: 2 ks ušľachtilých rýb: kapra, zubáča veľkoústeho, šťuky severskej, sumca, prípadne kombináciu dvoch kusov týchto rýb, ale najviac 7kg za 1 deň; alebo 4 ks lososovitých rýb; alebo 1 ušľachtilá ryba + 4 ks lososovitých rýb; alebo 3 kg bielej ryby.<br>
+  5. Pri ulovení kapra nad 65 cm dĺžky je loviaci povinný rybu neodkladne vrátiť späť do rybníka.<br>
+  6. Privlastnením si povoleného počtu rýb denný lov končí!<br>
+  7. Do záznamu sa zapisuje dátum, bez možnosti vymazania, vždy pred začatím lovu.<br>
+  8. Uvedené ponechané druhy rýb z bodu 4, si loviaci zapisuje (druh, hmotnosť, dĺžku) okamžite po ich privlastnení, ponechané ostatné druhy rýb loviaci zapisuje po skončení alebo prerušení lovu, maximálne dve lososovité ryby do riadka. Ak loviaci nemal alebo neprivlastnil si úlovok, vyznačí túto skutočnosť v zázname po skončení lovu vyčiarknutím daných políčok v povolení (celý riadok).<br>
+  9. V jednom roku si loviaci: A, člen združenia môže privlastniť najviac 12 ks kapra a 10 ks ušľachtilých rýb (dravcov) a neobmedzené množstvo lososovitých rýb. V prípade záujmu si člen môže po vyčerpaní takto stanoveného množstva privlastnených rýb zakúpiť ďalšie povolenie, na ktoré má nárok. B, junior 7 ks ušľachtilej ryby a 25 ks pstruha. C, dieťa 5 ks kapra a 25 ks pstruha. D, nečlen združenia s ročným povolením 10 ks ušľachtilých rýb a 25 ks pstruha.<br>
+  10. Loviaci pri love musí mať pri sebe mierku (na zistenie dĺžky), uvoľňovač háčikov, podberák a sieťku s kruhmi poprípade vak na ryby.<br>
+  11. Pri ulovení sumca bez ohľadu na jeho lovnú mieru, je loviaci povinný si rybu privlastniť a v žiadnom prípade nesmie rybu vrátiť späť do rybníka.<br>
+  12. Záznam o úlovkoch sa musí odovzdať najneskôr do 15.1. nasledujúceho roka.<br>
+  13. Stanovené miery ušľachtilých rýb: kapor: 45 – 65 cm, zubáč: 50 cm, šťuka: 60 cm, pstruh: 25 cm, amur: 70 cm.<br>
+  14. Povolenie lovu nástrahových rybiek je v úsekoch od cesty po vstup do rybníka a od výtoku z rybníka po závlahovú rúlu. Povolenie lovu nástrahových rybiek v malom rybníku na bič. Platí druhové hájenie.<br>
+  15. Lov lieňa, jesetera a ich privlastnenie je zakázané.</p>
 </div>
+
 <div class="pull-card" style="margin-bottom:24px;">
   <h4>Článok 2 — Denné doby lovu</h4>
-  <p style="font-size:.93rem;">Letná sezóna 04:00–24:00, zimné mesiace 07:00–20:00. Júl–september: lov cez víkend nepretržite od piatku 4:00 do nedele 24:00. Deti a juniori majú samostatný harmonogram, do 15 rokov vždy s dozorom.</p>
+  <p style="font-size:.93rem;"><b>A, Pre členov združenia, nečlenov s ročným a denným povolením:</b><br>
+  1.1. – 15.3. povolený lov kapra, pstruha a amura (zákaz lovu dravca a na prívlač).<br>
+  15.3. – do ukončenia kaprových pretekov všeobecný zákaz lovu.<br>
+  Letná sezóna začína deň po kaprových pretekoch do 31.10. s časom lovu od 04.00 – 24.00 hod.<br>
+  1.11 – 31.12. denne od 07.00 - 20.00 hod.<br><br>
+  V letných mesiacoch júl, august, september je povolený lov rýb cez víkend s nasledovným časom lovu v piatok od 4.00 hod do nedele do 24.00 hod nepretržite.</p>
+  <p style="font-size:.93rem;"><b>B, Pre deti a juniorov:</b><br>
+  január, február, marec, apríl — zákaz lovu všetkých druhov rýb<br>
+  máj, jún, júl, august — piatok od 15.00 do 24.00 hod, sobota od 05.00 do 24.00 hod, nedeľa od 05.00 do 24.00 hod<br>
+  september, október — sobota od 06.00 do 21.00 hod, nedeľa od 06.00 do 21.00 hod<br>
+  november, december — sobota od 07.00 do 20.00 hod, nedeľa od 07.00 do 20.00 hod<br><br>
+  Deti a juniori majú povolený lov rýb aj v týždni počas letných prázdnin v dobe od 1.7. do 31.8. v čase od 4.00 do 24.00 hod. Pre deti do 15 rokov, je pri love potrebný dozor plnoletej osoby.<br><br>
+  Výkonný výbor si vyhradzuje právo zmeny denného lovu rýb, počas celého roka, po predošlom odsúhlasení výkonným výborom združenia. Platnosť tohto rozhodnutia nadobúda účinnosť nasledujúci deň po schválení výkonným výborom združenia, ak nie je v návrhu uvedené inak.</p>
 </div>
+
+<div class="pull-card" style="margin-bottom:24px;">
+  <h4>Článok 3 — Zakázané spôsoby lovu rýb</h4>
+  <p style="font-size:.93rem;"><b>Zakazuje sa:</b><br>
+  a) používať na lov rýb výbušniny, otravné látky, harpúny, bodce, udice bez prútov, ako aj strieľať ryby, loviť ryby pod ľadom, loviť ich na šnúry a podsekávaním udicou, do rúk a ôk,<br>
+  b) zbierať ikry, používať na lov rýb elektrický prúd, omamné látky, loviť ryby v noci za pomoci svetla, používať lapadlá, vrše, koše a pod., loviť ryby v rybovode a vo vyznačenom úseku nad ním a pod ním, v prítokovom a odtokovom kanále okrem úsekov vyšpecifikovaných v článku 1 bod 14, používať akékoľvek stále zariadenia na lovenie rýb alebo siete a zabraňovať ťahu rýb proti vode,<br>
+  c) loviť ryby na miestach, kde sa nahromadili pri mimoriadnych situáciách, ako aj ryby zhromaždené v čase neresu a na zimoviskách,<br>
+  d) loviť ryby vypustením, odhradením alebo odčerpaním vody,<br>
+  e) loviť ryby do stavačky.</p>
+</div>
+
 <div class="pull-card">
-  <h4>Článok 3 a 4 — Zákazy a všeobecné ustanovenia</h4>
-  <p style="font-size:.93rem;">Zakázané sú výbušniny, elektrický prúd, siete, lov v noci so svetlom a iné nešportové spôsoby lovu. Návštevníci sú povinní udržovať poriadok, oheň len na vyhradených miestach, vozidlá mimo vyhradených plôch zakázané.</p>
+  <h4>Článok 4 — Všeobecné ustanovenia</h4>
+  <p style="font-size:.93rem;">1. Návštevník vodnej plochy a priľahlých pozemkov (ďalej len „Záhumnie“) je povinný udržovať pokoj a poriadok.<br>
+  2. Zakladať oheň sa môže len na miestach na to určených.<br>
+  3. Jazda na skútroch, motorkách, automobiloch a iných motorových vozidlách v okolí vodnej plochy je zakázaná.<br>
+  4. Parkovanie motorových vozidiel je povolené len na to vyhradených miestach.<br>
+  5. Poškodzovanie prírody a majetku je zakázané.<br>
+  6. Nedodržiavanie ustanovení tohto miestneho poriadku sa bude považovať za jeho hrubé porušenie, ktoré bude postihované podľa príslušných zákonov a všeobecne záväzných právnych predpisov.</p>
+  <p style="margin-top:16px; font-size:.9rem;"><b>Jozef Kováčik</b> — predseda združenia<br><b>Zdeno Markech</b> — podpredseda združenia<br><b>Norbert Michel</b> — tajomník združenia</p>
 </div>`,
     },
   },
