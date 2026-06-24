@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
 
 <header>
   <div class="nav">
@@ -48,7 +48,7 @@
   <div>
     <p class="hero-quote">„U nás sa Vám bude páčiť, presvedčte sa sami...“</p>
     <h1>Rybárske združenie <em>Záhumnie</em></h1>
-    <p class="lead">Sme správcom vodnej plochy Záhumnie v obci Veľké Orvište. Ponúkame športový rybolov nielen členom, ale aj širokej verejnosti — bez rozdielu veku a pohlavia. Príďte si oddýchnuť a zachytiť svoj úlovok.</p>
+    <p class="lead" id="cms-hero-lead" data-cms="heroLead">Sme správcom vodnej plochy Záhumnie v obci Veľké Orvište. Ponúkame športový rybolov nielen členom, ale aj širokej verejnosti — bez rozdielu veku a pohlavia. Príďte si oddýchnuť a zachytiť svoj úlovok.</p>
     <div class="hero-actions">
       <a href="#udalosti" class="btn btn-primary">Aktuálne preteky</a>
       <a href="#kontakt" class="btn btn-outline">Kontaktovať výbor</a>
@@ -74,7 +74,7 @@
     <div class="eyebrow">Vitajte na stránke</div>
     <h2 class="section-title">Rybárske združenie Záhumnie – Veľké Orvište</h2>
     <div class="about-grid">
-      <div>
+      <div id="cms-vitajte" data-cms="vitajte">
         <p>Rybárske združenie je správcom vodnej plochy Záhumnie v obci Veľké Orvište. Jedná sa o občianske združenie, ktoré si založilo pár priateľov športového rybolovu v obci a na základe povolenia podnikania v zvláštnom režime začalo v roku 2009 svoju činnosť.</p>
         <p>RZ Záhumnie ponúka možnosť športového rybolovu nielen svojim členom, ale aj širokej verejnosti, bez rozdielu veku a pohlavia. O našich aktivitách svedčí aj viacero akcií organizovaných počas roka.</p>
         <p>Vôbec nám nevadí, že nie ste registrovaným rybárom. Príďte si aktívne oddýchnuť počas roka a spríjemnite si čas pohodovou rybačkou na našom rybníku podľa našich vlastných pravidiel.</p>
@@ -119,7 +119,7 @@
     <div class="eyebrow">Náš projekt</div>
     <h2 class="section-title">Zveľadenie oddychovo-relaxačného areálu rybník Záhumnie</h2>
     <div class="project-grid">
-      <div>
+      <div id="cms-project" data-cms="project">
         <p>Trnavský samosprávny kraj sa svojou činnosťou ako partner verejného sektora angažuje aj na poli podpory samosprávy a občianskych združení formou dotačných výziev.</p>
         <p>Naše občianske združenie, ktoré funguje už 15 rokov, je zamerané na ochranu životného prostredia a obnovu genofondu rýb. Na podporu zmiernenia klimatických zmien sme požiadali o podporu pre projekt „Zveľadenie oddychovo-relaxačného areálu rybník Záhumnie Veľké Orvište“.</p>
         <p>Pre rozvoj tejto lokality sme uspeli s výzvou na zakúpenie kosačky na úpravu trávnatých plôch a brehov rybníka. Celý projekt sa podarilo zrealizovať v júli 2024 a kosačka od tej doby slúži na revitalizáciu a údržbu okolia rybníka.</p>
@@ -186,5 +186,6 @@
   </div>
 </footer>
 
+<script type="module" src="assets/content-loader.js"></script>
 </body>
 </html>
