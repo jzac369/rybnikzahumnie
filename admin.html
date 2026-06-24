@@ -163,7 +163,7 @@ document.getElementById('login-btn').addEventListener('click', async () => {
   try {
     await signInWithEmailAndPassword(auth, email, pass);
   } catch (e) {
-    errEl.textContent = 'Nesprávny email alebo heslo.';
+    errEl.textContent = 'Chyba: ' + e.code + ' — ' + e.message;
     errEl.style.display = 'block';
   }
 });
