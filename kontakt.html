@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="kontakt">
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
@@ -65,10 +65,10 @@
       <div>
         <h4 style="margin-bottom:16px;">Kontaktné informácie</h4>
         <ul class="contact-list">
-          <li>Adresa <b style="font-family:'Work Sans',sans-serif; font-weight:600;">Hlavná 17, 922 01 Veľké Orvište</b></li>
-          <li>Tel <b>0907 780 912</b></li>
-          <li>Tel <b>0903 947 768</b></li>
-          <li>Email <b>info@rybnikzahumnie.sk</b></li>
+          <li>Adresa <b id="kontakt-adresa" data-cms="address" style="font-family:'Work Sans',sans-serif; font-weight:600;">Hlavná 17, 922 01 Veľké Orvište</b></li>
+          <li>Tel <b id="kontakt-tel1" data-cms="phone1">0907 780 912</b></li>
+          <li>Tel <b id="kontakt-tel2" data-cms="phone2">0903 947 768</b></li>
+          <li>Email <b id="kontakt-email" data-cms="email">info@rybnikzahumnie.sk</b></li>
         </ul>
         <div style="margin-top:24px; border-radius:14px; overflow:hidden; border:1px solid var(--sand-line); box-shadow:var(--shadow);">
           <iframe style="width:100%; height:300px; border:0;" loading="lazy"
@@ -108,5 +108,6 @@
   </div>
 </footer>
 
+<script type="module" src="assets/content-loader.js"></script>
 </body>
 </html>
