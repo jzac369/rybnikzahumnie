@@ -4,7 +4,8 @@ import {
   onAuthStateChanged, signOut
 } from "./firebase-init.js";
 import { SEED_DATA } from "./seed-data.js";
-import { uploadToCloudinary } from "./cloudinary.js";
+import { uploadToCloudinary, uploadRemoteToCloudinary } from "./cloudinary.js";
+import { MIGRATION_ALBUMS } from "./migration-data.js";
 
 let quillLoaded = false;
 function loadQuill() {
@@ -287,6 +288,43 @@ async function enableEventsAdmin() {
 async function enableGalleryAdmin() {
   const list = document.getElementById('albums-list');
   if (!list) return;
+
+  const migrateWrap = document.createElement('div');
+  migrateWrap.style.marginBottom = '18px';
+  migrateWrap.innerHTML = `<button class="cms-cancel-btn" id="migrate-btn">⤓ Migrovať všetky fotky z pôvodnej stránky (${MIGRATION_ALBUMS.length} albumov)</button> <span id="migrate-status" style="font-size:.82rem; color:var(--ink); margin-left:10px;"></span>`;
+  list.parentNode.insertBefore(migrateWrap, list);
+  migrateWrap.querySelector('#migrate-btn').addEventListener('click', async () => {
+    const totalPhotos = MIGRATION_ALBUMS.reduce((s, a) => s + a.photos.length, 0);
+    if (!confirm(`Toto nahrá ${totalPhotos} fotiek z ${MIGRATION_ALBUMS.length} albumov. Môže to trvať dlho (desiatky minút) — nezatváraj túto stránku, kým to bude bežať. Pokračovať?`)) return;
+    const statusEl = document.getElementById('migrate-status');
+    const existingSnap = await getDocs(collection(db, "albums"));
+    const existingByTitle = {};
+    existingSnap.forEach(d => existingByTitle[d.data().title] = { id: d.id, photos: d.data().photos || [] });
+
+    for (const album of MIGRATION_ALBUMS) {
+      let albumId, photosSoFar;
+      if (existingByTitle[album.title]) {
+        albumId = existingByTitle[album.title].id;
+        photosSoFar = [...existingByTitle[album.title].photos];
+      } else {
+        const ref = await addDoc(collection(db, "albums"), { title: album.title, year: album.year, photos: [], createdAt: Date.now() });
+        albumId = ref.id;
+        photosSoFar = [];
+      }
+      for (let i = photosSoFar.length; i < album.photos.length; i++) {
+        statusEl.textContent = `Album "${album.title}": fotka ${i + 1}/${album.photos.length}...`;
+        try {
+          const url = await uploadRemoteToCloudinary(album.photos[i]);
+          photosSoFar.push({ url });
+          await setDoc(doc(db, "albums", albumId), { photos: photosSoFar }, { merge: true });
+        } catch (err) {
+          console.warn('Chyba pri fotke', album.photos[i], err);
+        }
+      }
+    }
+    statusEl.textContent = 'Migrácia dokončená ✓';
+    renderAlbumsAdmin();
+  });
 
   const wrap = document.createElement('div');
   wrap.style.marginBottom = '24px';
