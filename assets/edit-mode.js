@@ -154,7 +154,7 @@ async function enableEventsAdmin() {
 
   const patchWrap = document.createElement('div');
   patchWrap.style.marginBottom = '18px';
-  patchWrap.innerHTML = `<button class="cms-cancel-btn" id="ev-patch-btn">⤓ Doplniť plné texty k existujúcim ukážkovým udalostiam</button> <span id="ev-patch-status" style="font-size:.82rem; color:var(--ink); margin-left:10px;"></span>`;
+  patchWrap.innerHTML = `<button class="cms-cancel-btn" id="ev-patch-btn">⤓ Prepísať/doplniť presný text k ukážkovým udalostiam</button> <span id="ev-patch-status" style="font-size:.82rem; color:var(--ink); margin-left:10px;"></span>`;
   list.parentNode.insertBefore(patchWrap, list);
   patchWrap.querySelector('#ev-patch-btn').addEventListener('click', async () => {
     const statusEl = document.getElementById('ev-patch-status');
@@ -163,14 +163,15 @@ async function enableEventsAdmin() {
     let matched = 0, skipped = 0;
     for (const docSnap of snap.docs) {
       const existing = docSnap.data();
-      if (existing.body) { skipped++; continue; }
       const seedMatch = SEED_DATA.events.find(se => se.title === existing.title);
-      if (seedMatch) {
+      if (seedMatch && existing.body !== seedMatch.body) {
         await setDoc(doc(db, "events", docSnap.id), { body: seedMatch.body }, { merge: true });
         matched++;
+      } else {
+        skipped++;
       }
     }
-    statusEl.textContent = `Hotovo — doplnených ${matched}, preskočených (už mali text) ${skipped}.`;
+    statusEl.textContent = `Hotovo — prepísaných/doplnených ${matched}, bez zmeny ${skipped}.`;
     render();
   });
 
