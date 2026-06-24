@@ -240,70 +240,241 @@ export const SEED_DATA = {
     { day:"14", month:"04", year:"2026", title:"Zoznam Pretekárov Orvišťský šupináč 25. apríl 2026", excerpt:"Zoznam prihlásených pretekárov na jarné kaprové preteky.", sortDate:"2026-04-14",
       body:`<p>1. Miloš Majerovič<br>2. Martin Bundala<br>3. Slaviša Petrovič<br>4. Roman Žák<br>5. Ľudovít Jakubek<br>6. Michal Václav<br>7. Vlado Šimko<br>8. Vratislav Šíp<br>9. Kristián Brunovský<br>10. Jozef Pavlech<br>11. Ivan Madunický<br>12. Laco Košút<br>13. Imro Munka<br>14. Dominika Sopúchová<br>15. Dušan Sopúch<br>16. Vlado Vaško<br>17. Jozef Beneš<br>18. Libor Polák<br>19. Luboš Zaťko<br>20. Róbert Bartoš<br>21. Fero Karkuš<br>22. Pavol Kadlec<br>23. Michal Plačko<br>24. Ján Gál<br>25. Štefan Ambruš<br>26. Fero Kunst<br>27. Milan Behan<br>28. Martin Balaga<br>29. Ján Lieskovský<br>30. Jaroslav Turánek<br>31. Patrik Čech<br>32. Martin Paulovič<br>33. Martin Šimanský<br>34. Peter Zubák<br>35. Michal Mitošinka<br>36. Michal Mitošinka jr.<br>37. Miroslav Bednár<br>38. Dušan Galandák<br>39. Miro Sulák<br>40. Daniel Hulman<br>41. Daniel Pekarovič<br>42. Vlado Kysela<br>43. Miro Hochel<br>44. Drahomíra Vaňová<br>45. František Vaňo<br>46. Zdeněk Jakubčík<br>47. RZ Záhumnie<br>48. Martin Lipka<br>49. David Petrovičť<br>50. Jaroslav Cellar<br>51. RZ Záhumnie</p>` },
     { day:"21", month:"02", year:"2026", title:"Propozície pretekov v love kapra XIV. ročník Orvištský šupináč", excerpt:"Pravidlá a podmienky účasti na jarných kaprových pretekoch.", sortDate:"2026-02-21",
-      body:`<p><strong>Kto:</strong> RZ Záhumnie Veľké Orvište &nbsp; <strong>Kde:</strong> Rybník Záhumnie vo V. Orvišti</p>
-<p><strong>Kedy:</strong> 25. apríla 2026 (sobota) &nbsp; <strong>Štartovné:</strong> 25 Euro (obed + pivo, resp. nealko)</p>
-<p><strong>Organizačný výbor:</strong> Riaditeľ pretekov: Kováčik Jozef. Hlavný rozhodca: Belica Igor. Váženie úlovkov: traťový rozhodcovia.</p>
-<p>Štartovné na pretek je 25 €, treba uhradiť do 19. apríla 2026 vkladom alebo bankovým prevodom na účet ČSOB IBAN: SK 58 7500 0000 0040 2995 2660 (do správy uveďte meno pretekára). V cene je privítací drink, obed + pivo/nealko. Uzávierka prihlášok je 22. apríla 2026, alebo do naplnenia kapacity 64 miest.</p>
-<p><strong>Program pretekov:</strong><br>6:00 – 7:30 prezentácia, zaujatie stanoviska, vnadenie<br>7:30 – 15:00 čas lovu<br>15:00 – 16:00 váženie úlovkov<br>16:00 vyhodnotenie pretekov</p>
-<p><strong>Základné info:</strong> Stojatá voda s rozlohou 1,8 ha, hĺbka 0,8–1,5 m. Pretekársky sektor min. 3 m, označený číslom. Pred pretekmi bude vysadená násada kapra rybničného v množstve 600 kg. Lov povolený na dve udice s očkami, na každej iba jeden nadväzec. Hodnotí sa iba kapor min. dĺžky 45 cm. Víťazom sa stáva loviaci s najťažším kaprom. Loviaci si môže privlastniť iba jedného kapra (max do 59 cm), bez možnosti výmeny. Povinné je používať podberák a podložku pod ryby.</p>
-<p><strong>Ceny:</strong> 1. cena 200 € + pohár, 2. cena 100 € + pohár, 3. cena 50 € + pohár, 4. cena 30 €, 5. cena kartón vína, 6. cena celodenná povolenka. Ocenený bude aj prvý zdolaný mierový kapor a pretekár s najväčším počtom ulovených mierových kaprov.</p>
-<p>Informácie na t. č. 0907 780 912, alebo u členov výboru RZ. Tešíme sa na Vašu účasť. Organizátori pretekov.</p>` },
+      body:`<p>Kto: RZ Záhumnie Veľké Orvište Kde: Rybník Záhumnie vo V. Orvišti</p>
+<p>Kedy: 25. apríla 2026 (sobota) Štartovné: 25 Euro ( obed + pivo, resp. nealko )</p>
+<p>Organizačný výbor: Riaditeľ pretekov: Kováčik Jozef</p>
+<p>Hlavný rozhodca: Belica Igor</p>
+<p>Váženie úlovkov: Traťový rozhodcovia</p>
+<p>Štartovné a prihlásenie sa na pretek:</p>
+<p>Štartovné na pretek, je 25 euro, ktoré treba uhradiť do 19. apríla 2026,vkladom, alebo bankovým prevodom na účet príjemcu. Číslo účtu: ČSOB IBAN: SK 58 7500 0000 0040 2995 2660 Do správy pre adresáta napíšte meno pretekára, resp. pretekárov za ktorého platíte. V cene štartovného je privítací drink, obed +pivo,resp. nealko. Uzávierka prihlášok je 22. apríla 2026, alebo do naplnenia plného stavu štartovacích miest. Kapacita pretekov je 64 miest. Pretekár bude pripísaný na štartovnú listinu pretekov, keď štartovné bude pripísané na účet prijímateľa.</p>
+<p>Program pretekov:</p>
+<p>6.00 – 7.30 prezentácia, zaujatie stanoviska, vnadenie.</p>
+<p>7.30 – 15.00 čas lovu</p>
+<p>15.00 – 16.00 váženie úlovkov</p>
+<p>16.00 vyhodnotenie pretekov</p>
+<p>Základné info:</p>
+<p>Jedná sa o stojatú vodu s rozlohou 1.8ha s hĺbkou od 0,8 –1,5m. Pretekársky sektor je min. 3m, označený číslom. Pred pretekmi bude vysadená násada kapra rybničného v množstve 600 kg. Pretek bude zahájený aj ukončený trúbením.</p>
+<p>Lov povolený na dve udice s očkami a s vrhacím navijakom alebo multiplikátorom. Na každej udici je povolený iba JEDEN nadväzec.</p>
+<p>Hodnotiť sa bude iba KAPOR min. dĺžke 45cm.</p>
+<p>Víťazom pretekov sa stane loviaci s najťažším kaprom.</p>
+<p>Loviaci si môže počas pretekov privlastniť iba jedného kapra,max do 59cm, ktorého po privlastnení NIE JE možno počas pretekov vymeniť. Príklad:( pretekár si privlastní kapra52cm, neskôr uloví kapra58cm, privlastniť si ho nemôže, ale rozhodca mu ho odváži, zapíše váhu do bodovacieho preukazu a kapra pustí späť do rybníka.) To isté platí aj pri kaprovi 60+. Ostatné druhy ulovených rýb, je nevyhnutné ihneď pustiť späť do vody.</p>
+<p>Pri zdolávaní úlovkov, je povinné používať podberák a podložku pod ryby.</p>
+<p>Každý pretekár sa musí správať ohľaduplne k ostatným pretekárom a vo svojom okolí udržiavať poriadok.</p>
+<p>Účastníci sa na tomto podujatí zúčastňujú na vlastnú zodpovednosť.</p>
+<p>Občerstvenie je zabezpečené v bufete ( párky, klobása, pivo, nealko, káva, čaj, drobné pochutiny)</p>
+<p>Preteká sa o hodnotné ceny:</p>
+<p>1. cena v hodnote 200 euro + pohár za 1. miesto</p>
+<p>2. cena v hodnote 100 euro + pohár za 2. miesto</p>
+<p>3. cena v hodnote 50 euro + pohár za 3. miesto</p>
+<p>4. cena v hodnote 30 euro</p>
+<p>5. cena kartón kvalitného vína</p>
+<p>6. cena celodenná povolenka na lov rýb v rybníku Záhumnie</p>
+<p>Ocenený bude aj prvý zdolaný mierový kapor, ako aj pretekár s najväčším počtom ulovených mierových kaprov.</p>
+<p>Informácie na t.č. 0907 780 912 , alebo u členov výboru RZ.</p>
+<p>Tešíme sa na Vašu účasť. Organizátori pretekov.</p>` },
     { day:"04", month:"01", year:"2026", title:"RZ Záhumnie poriada preteky Jarný pstruh XVI. ročník", excerpt:"Dva samostatné preteky v love pstruhov na prívlač, 21. a 22. marca 2026.", sortDate:"2026-01-04",
-      body:`<p>PROPOZÍCIE PRETEKU: jedná sa o dva samostatné preteky.</p>
-<p><strong>1. Povolený prút a vybavenie:</strong> Rybárska udica s očkami do 360 cm. Lov prívlačou jednou udicou s navijakom, vlascom/šnúrou a vláčenou nástrahou. Povinný je podberák a pean.</p>
-<p><strong>2. Zakázané spôsoby a nástrahy:</strong> Zakázané sú živé/rastlinné nástrahy, umelá kukurica, cesto, kŕmenie, brodenie, sbirolino, nástrahy s perím/nitami. Zákaz protihrotov.</p>
-<p><strong>3. Uznávané úlovky:</strong> Pstruh dúhový, sivoň americký, zaseknutý v hlavovej časti.</p>
-<p><strong>5. Hodnotenie:</strong> Súťaž v šiestich sektoroch na šesť kôl, každá uznaná ryba = 1 bod. Víťazom sektoru je pretekár s najvyšším súčtom bodov, celkovým víťazom pretekár s najnižším súčtom umiestnení.</p>
-<p><strong>9. Zarybnenie:</strong> Pred prvým pretekom min. 400 kg pstruha dúhového, pred druhým min. 200 kg.</p>
-<p><strong>10. Štartovné a ceny:</strong> 40 € na sobotu, 40 € na nedeľu, splatné do 13. marca 2026 na účet ČSOB IBAN SK58 7500 0000 0040 2995 2660. V cene raňajky + káva/čaj, obed + pivo/nealko. Kapacita 60 pretekárov na pretek. 1. cena – bicykel Kellys v hodnote 600 €, 2. cena 150 € hotovosť, 3. cena 100 € hotovosť. Pri min. 4 ženách bude vyhodnotená aj kategória žien.</p>
-<p><strong>Info:</strong> Michel Norbert – 0907 780 912. Tešíme sa na Vašu účasť. Petrov zdar.</p>` },
+      body:`<p>PROPOZÍCIE PRETEKU: JEDNÁ SA O DVA SAMOSTATNÉ PRETEKY!!!!!<br>
+<strong>1. POVOLENÝ PRÚT A VYBAVENIE</strong><br>
+Rybárska udica s očkami do 360 cm dĺžky. Lov rýb prívlačou je spôsob lovu rýb jednou udicou, ktorá sa skladá z rybárskeho prúta s navijakom, vlasca, alebo spletanej šnúry a vláčenej nástrahy, pri ktorom je nástraha ťahaná prerušovaným, alebo súvislým pohybom s cieľom podnietiť ryby k záberu. Záťaž musí byť súčasťou nástrahy. Povinný je podberák a pean.</p>
+<p><strong>2. ZAKÁZANÉ SPÔSOBY A NÁSTRAHY</strong><br>
+Je zakázané používanie všetkých vodných a suchozemských živočíchov ako nástrahy, rastlinných nástrah, napodobneniny ikry, umelá kukurica, cesto, kŕmenie a hádzania rukou alebo strieľanie prakom čohokoľvek do vody, brodenie, používať sbirolino, lov na príves, používať nástrahy, ktoré obsahujú perie, nite, ako prírodné, tak aj umelé, vrátane gumovej striže a kože. Zákaz používať protihroty!!!! Pri porušení zákazov nasleduje diskvalifikácia v kole a pri následovnom porušení diskvalifikácia v preteku.</p>
+<p><strong>3. UZNÁVANÉ ÚLOVKY</strong><br>
+Pstruh dúhový, Sivoň americký. Ryba musí byť zaseknutá v hlavovej časti, ohraničenej líniou žiabrových oblúkov a prsných plutiev.</p>
+<p><strong>4. ZAOBCHÁDZANIE S RYBOU</strong><br>
+Pri zdolávaní musí byť ryba vylovená podberákom.</p>
+<p><strong>5. ŽREBOVANIE, HODNOTENIE A BODOVANIE</strong><br>
+Každá uznaná ryba = 1 bod v danom kole. Súťažiť sa bude v šiestich sektoroch na šesť kôl. Hodnotiť sa bude každý sektor v danom kole zvlášť. Víťazom sektoru sa stáva pretekár s najvyšším súčtom bodovaných rýb v danom kole. Celkovým víťazom pretekov sa stáva pretekár s najnižším súčtom umiestnení v šiestich kolách.<br>
+V prípade rovnosti bodov rozhoduje počet ulovených rýb, v celom preteku. Ak je počet rovnaký, rozhoduje počet ulovených rýb vo 6. kole resp. v 5. kole.</p>
+<p><strong>6. VŠEOBECNÉ USTANOVENIA</strong><br>
+Každý pretekár sa musí chovať a pohybovať v pretekárskom úseku ohľaduplne k ostatným pretekárom a vo svojom okolí udržiavať poriadok. Účastníci sa týchto pretekov zúčastňujú na vlastné nebezpečie a za svoje konanie nesú vlastnú zodpovednosť. Pretekár zdolanú rybu z podberáku ihneď pustí späť do vody. Pretekár, ktorý sa zúčastní prívlačového preteku si môže privlastniť ulovenú rybu pstruha dúhového v max. počte 3ks. Tieto privlastnené kusy je povinný humánne zabiť a oznámiť rozhodcovi sektoru, že si ulovenú rybu privlastnil. Rozhodca mu takúto rybu označí v bodovacom preukaze krúžkom. Každé kolo bude zahájené a ukončené trúbením. Ryba zaseknutá pred zvukovým signálom ukončenia kola sa započítava. Po skončení každého kola rozhodca napíše súčet ulovených rýb (pstruh dúhový). Pretekár preškrtne voľné riadky - Bodovací preukaz podpíše a odovzdá rozhodcovi!!!!!!</p>
+<p><strong>7. POČASIE, NEOČAKÁVANÉ SITUÁCIE A NÁHRADA ŠTARTOVNÉHO</strong><br>
+Pretek sa koná za každého počasia s výnimkou prírodných katastrôf. V prípade ak sa pretekár nedostaví, štartovné sa nevracia. V prípade ak sa pretek kvôli nečakanej príčine zruší, štartovné bude vrátené v plnej výške. Organizátor si vyhradzuje právo prispôsobiť pretek nečakane vzniknutej situácii.<br>
+Preteky budú v režime, podľa platnej legislatívy vlády SR k aktuálnemu dátumu pretekov.</p>
+<p><strong>8. PRETEKÁRSKA TRAŤ</strong><br>
+Trať je postavená na jazere RZ Záhumnie vo Veľkom Orvišti - cesta od Piešťan vo Veľkom Orvišti za kostolom do prava smer Pobedím, od Vrbového smer Krakovany, Ostrov , Orvište pred kostolom do ľava smer Pobedím. Jedná sa o stojatú vodu z rozlohou 2ha a hĺbkou od 0.8 - 1.8m. Pretekársky úsek je označený číslami pre každé miesto podľa počtu pretekárov cca 4m.</p>
+<p><strong>9. ZARYBNENIE</strong><br>
+Pred prvým pretekom bude vysadená čerstvá násada - minimálne 400 kg pstruha dúhového, pred druhým pretekom minimálne 200kg pstruha dúhového. Voda je zarybnená osádkou pstruha dúhového z predchádzajúcich zarybnení.</p>
+<p><strong>10. ŠTARTOVNÉ A CENY</strong><br>
+Štartovné na sobotu 21.marca je 40 euro. Na nedeľu 22. marca je štartovné tak isto 40.euro. Štartovné je potrebné uhradiť tak, aby bolo do 13.marca 2026 na účte príjemcu. Štartovné je potrebné uhradiť vkladom, alebo bankovým prevodom na č. ú. ČSOB IBAN SK58 7500 0000 0040 2995 2660 Do správy pre adresáta napíšte dátum pretekov, meno a priezvisko, pretekára resp. pretekárov za ktorého platíte. V cene štartovného sú raňajky + káva alebo čaj, obed +-pivo resp. nealko. V nedelu bude zmena obeda. Uzávierka prihlášok je 7.marca 2025 Počet prihlásených pretekárov na každý pretek je 60 miest. Po naplnení stavu, bude prihlasovanie zastavené, bližšie info na www.rybnikzahumnie.sk alebo 0907 780 912 Pretekár bude pripísaný na štartovnú listinu pretekov, keď štartovné bude pripísané na účte prijímateľa.<br>
+1. cena- bicykel zn. Kellys v hodnote 600 euro<br>
+2. cena- 150 euro hotovosť<br>
+3. cena- 100 euro hotovosť<br>
+Pretekári na 4. 5. a 6. mieste obdržia vecné ceny.<br>
+Ak sa na pretekoch zúčastnia minimálne štyri ženy, bude vyhodnotená aj kategória žien.<br>
+Prví traja pretekári obdržia pamätné poháre</p>
+<p><strong>11. ORGANIZAČNÝ VÝBOR</strong><br>
+Riaditeľ pretekov - Michel Norbert<br>
+Bodovacia komisia – Kováčik Jozef, Kovačiková Katarína<br>
+Hlavný rozhodca – Belica Igor</p>
+<p><strong>12. HARMONOGRAM PRETEKU</strong><br>
+06:00 – 7:50 - prezentácia losovanie + uvítací drink<br>
+08:00 - 08:50 I. kolo<br>
+09:00 – 09:50 II. kolo<br>
+10:00 – 10:50 III. kolo<br>
+11:00 - 11:50 IV. kolo<br>
+12:00 – 13:00 obedná prestávka<br>
+13:00 - 13:50 V..kolo<br>
+14:00 – 14:50 VI. kolo<br>
+15:30 – vyhodnotenie preteku a odovzdanie cien</p>
+<p><strong>13. INFO</strong><br>
+Michel Norbert - 0907 780 912</p>
+<p><strong>14. UBYTOVANIE</strong><br>
+Možnosti ubytovania - Piešťany</p>
+<p>Tešime sa na Vašu účasť - RZ Záhumnie vo Veľkom Orvišti<br>
+Petrov Zdar.</p>` },
     { day:"15", month:"10", year:"2025", title:"Mikulášsky blyskáč mix dvojíc III. ročník", excerpt:"Preteky pre zmiešané dvojice, 29. novembra 2025 na rybníku Záhumnie.", sortDate:"2025-10-15",
       body:`<p>Zoznam zaregistrovaných dvojíc:</p>
 <p>1. Radoslava Blašková – Martin Zelnický<br>2. Ľubica Petrušková – Peter Števík<br>3. Soňa Predná – Miroslav Boor<br>4. Erika Osadská – Vlado Osadský<br>5. Erika Melušová – Braňo Meluš<br>6. Patrícia Maráčková – Peter Maráček<br>7. Michaela Ragulová – Peter Eckhardt<br>8. Zuzana Brummerová – Peter Horňák<br>9. Drahomíra Vaňová – František Vaňo<br>10. Nikola Michalková – Jakub Michalka<br>11. Veronika Straková – Rado Belovič<br>12. Marína Ohol – Andrij Ohol<br>13. Miroslava Schneiderová – Juraj Schneider<br>14. Magdaléna Plačková – Lukáš Plačko<br>15. Maťa Onofrejová – Ivan Onofrej<br>16. Veronika Krošláková – Alex Chovan<br>17. Michaela Rozkopálová – Michal Benyo<br>18. Oľga Ilenčíková – Marián Michalka<br>19. Tatiana Neštáková – Ondrej Sadloň<br>20. Monika Stančíková – Michal Masarech</p>` },
     { day:"10", month:"07", year:"2025", title:"Orvišťský blyskáč XV. ročník", excerpt:"Dva samostatné preteky v love pstruhov na prívlač, 25. a 26. októbra 2025.", sortDate:"2025-07-10",
-      body:`<p>PROPOZÍCIE PRETEKU: jedná sa o dva samostatné preteky.</p>
-<p><strong>Povolený prút a vybavenie:</strong> Rybárska udica s očkami do 360 cm, lov prívlačou. Povinný podberák a pean.</p>
-<p><strong>Zakázané spôsoby:</strong> Živé/rastlinné nástrahy, umelá kukurica, cesto, kŕmenie, brodenie, sbirolino. Zákaz protihrotov.</p>
-<p><strong>Uznávané úlovky:</strong> Pstruh dúhový, zaseknutý v hlavovej časti.</p>
-<p><strong>Trať:</strong> Stojatá voda 2 ha, hĺbka 0,8–1,8 m. Pretekárska trať rozdelená na šesť sektorov – päť na veľkom rybníku, jeden na malom (Trout Land). Privlastniť možno tri kusy pstruha iba na veľkom rybníku.</p>
-<p><strong>Zarybnenie:</strong> Pred prvým pretekom min. 400 kg, pred druhým min. 200 kg pstruha dúhového do veľkého rybníka, do malého 200 kg.</p>
-<p><strong>Štartovné a ceny:</strong> 40 € na sobotu, 40 € na nedeľu, splatné do 17. októbra 2025. V cene raňajky a obed. Kapacita 60 pretekárov na pretek. 1. cena – bicykel Kellys v hodnote 600 €, 2. cena 150 €, 3. cena 100 €.</p>
-<p><strong>Info:</strong> Michel Norbert – 0907 780 912. Petrov zdar.</p>` },
+      body:`<p>PROPOZÍCIE PRETEKU: JEDNÁ SA O DVA SAMOSTATNÉ PRETEKY!!!!!</p>
+<p><strong>1. POVOLENÝ PRÚT A VYBAVENIE</strong><br>
+Rybárska udica s očkami do 360 cm dĺžky. Lov rýb prívlačou je spôsob lovu rýb jednou udicou, ktorá sa skladá z rybárskeho prúta s navijakom, vlasca, alebo spletanej šnúry a vláčenej nástrahy, pri ktorom je nástraha ťahaná prerušovaným, alebo súvislým pohybom s cieľom podnietiť ryby k záberu. Záťaž musí byť súčasťou nástrahy. Povinný je podberák a pean.</p>
+<p><strong>2. ZAKÁZANÉ SPÔSOBY A NÁSTRAHY</strong><br>
+Je zakázané používanie všetkých vodných a suchozemských živočíchov ako nástrahy, rastlinných nástrah, napodobneniny ikry, umelá kukurica, cesto, kŕmenie a hádzania rukou alebo strieľanie prakom čohokoľvek do vody, brodenie, používať sbirolino, lov na príves, používať nástrahy, ktoré obsahujú perie, nite, ako prírodné, tak aj umelé, vrátane gumovej striže a kože. Zákaz používať protihroty!!!! Pri porušení zákazov nasleduje diskvalifikácia v kole a pri následovnom porušení diskvalifikácia v preteku.</p>
+<p><strong>3. UZNÁVANÉ ÚLOVKY</strong><br>
+Pstruh dúhový. Ryba musí byť zaseknutá v hlavovej časti, ohraničenej líniou žiabrových oblúkov a prsných plutiev.</p>
+<p><strong>4. ZAOBCHÁDZANIE S RYBOU</strong><br>
+Pri zdolávaní musí byť ryba vylovená podberákom.</p>
+<p><strong>5. ŽREBOVANIE, HODNOTENIE A BODOVANIE</strong><br>
+Každá uznaná ryba = 1 bod v danom kole. Súťažiť sa bude v šiestich sektoroch na šesť kôl. Hodnotiť sa bude každý sektor v danom kole zvlášť. Víťazom sektoru sa stáva pretekár s najvyšším súčtom bodovaných rýb v danom kole. Celkovým víťazom pretekov sa stáva pretekár s najnižším súčtom umiestnení v šiestich kolách.<br>
+V prípade rovnosti bodov rozhoduje počet ulovených rýb, v celom preteku. Ak je počet rovnaký, rozhoduje počet ulovených rýb vo 6. kole resp. v 5. kole.</p>
+<p><strong>6. VŠEOBECNÉ USTANOVENIA</strong><br>
+Každý pretekár sa musí chovať a pohybovať v pretekárskom úseku ohľaduplne k ostatným pretekárom a vo svojom okolí udržiavať poriadok. Účastníci sa týchto pretekov zúčastňujú na vlastné nebezpečie a za svoje konanie nesú vlastnú zodpovednosť. Pretekár zdolanú rybu z podberáku ihneď pustí späť do vody. Pretekár, ktorý sa zúčastní prívlačového preteku si môže privlastniť ulovenú rybu pstruha dúhového v max. počte 3ks, a to len v piatich sektoroch, ktoré budú vyznačené na Veľkom rybníku. Na MALOM RYBNÍKU SA RYBA NEPRIVLASTŇUJE!!!!! Tieto privlastnené kusy je povinný humánne zabiť a oznámiť rozhodcovi sektoru, že si ulovenú rybu privlastnil. Rozhodca mu takúto rybu označí v bodovacom preukaze krúžkom. Každé kolo bude zahájené a ukončené trúbením. Ryba zaseknutá pred zvukovým signálom ukončenia kola sa započítava. Po skončení každého kola rozhodca napíše súčet ulovených rýb (pstruh dúhový). Pretekár preškrtne voľné riadky - Bodovací preukaz podpíše a odovzdá rozhodcovi!!!!!!</p>
+<p><strong>7. POČASIE, NEOČAKÁVANÉ SITUÁCIE A NÁHRADA ŠTARTOVNÉHO</strong><br>
+Pretek sa koná za každého počasia s výnimkou prírodných katastrôf. V prípade ak sa pretekár nedostaví, štartovné sa nevracia. V prípade ak sa pretek kvôli nečakanej príčine zruší, štartovné bude vrátené v plnej výške. Organizátor si vyhradzuje právo prispôsobiť pretek nečakane vzniknutej situácii.<br>
+Preteky budú v režime, podľa platnej legislatívy vlády SR k aktuálnemu dátumu pretekov.</p>
+<p><strong>8. PRETEKÁRSKA TRAŤ</strong><br>
+Trať je postavená na jazere RZ Záhumnie vo Veľkom Orvišti - cesta od Piešťan vo Veľkom Orvišti za kostolom do prava smer Pobedím, od Vrbového smer Krakovany, Ostrov , Orvište pred kostolom do ľava smer Pobedím. Jedná sa o stojatú vodu z rozlohou 2ha a hĺbkou od 0.8 - 1.8m. Pretekársky úsek je označený číslami pre každé miesto podľa počtu pretekárov cca 4m. Pretekárska trať bude rozdelená na šesť sektorov, z toho päť bude na veľkom rybníku a jeden na malom ( Trout Land). Pretekár si počas pretekov môže privlastniť tri kusy pstruha IBA na veľkom rybníku.</p>
+<p><strong>9. ZARYBNENIE</strong><br>
+Pred prvým pretekom bude vysadená čerstvá násada - minimálne 400 kg pstruha dúhového, pred druhým pretekom minimálne 200kg pstruha dúhového, do veľkého rybníka a do malého 200kg pstruha dúhového. Voda je zarybnená osádkou pstruha dúhového z predchádzajúcich zarybnení.</p>
+<p><strong>10. ŠTARTOVNÉ A CENY</strong><br>
+Štartovné na sobotu 25. októbra je 40 euro. Na nedeľu 26. októbra je štartovné tak isto 40.euro. Štartovné je potrebné uhradiť tak, aby bolo do 17. októbra 2025 na účte príjemcu. Štartovné je potrebné uhradiť vkladom, alebo bankovým prevodom na č. ú. ČSOB IBAN SK58 7500 0000 0040 2995 2660 Do správy pre adresáta napíšte dátum pretekov, meno a priezvisko, pretekára resp. pretekárov za ktorého platíte. V cene štartovného sú raňajky + káva alebo čaj, obed +-pivo resp. nealko. V nedelu bude zmena obeda. Uzávierka prihlášok je 17. októbra 2025 Počet prihlásených pretekárov na každý pretek je 60 miest. Po naplnení stavu, bude prihlasovanie zastavené, bližšie info na www.rybnikzahumnie.sk alebo 0907 780 912 Pretekár bude pripísaný na štartovnú listinu pretekov, keď štartovné bude pripísané na účte prijímateľa.<br>
+1. cena- bicykel zn. Kellys v hodnote 600 euro<br>
+2. cena- 150 euro hotovosť<br>
+3.cena- 100 euro hotovosť<br>
+Prví traja pretekári obdržia pamätné poháre<br>
+Pretekári na 4. 5. a 6. mieste obdržia vecné ceny.<br>
+Ak sa na pretekoch zúčastnia minimálne štyri ženy, bude vyhodnotená aj kategória žien.</p>
+<p><strong>11. ORGANIZAČNÝ VÝBOR</strong><br>
+Riaditeľ pretekov - Michel Norbert<br>
+Bodovacia komisia – Kovačiková Katarína, Moravčík Peter<br>
+Hlavný rozhodca – Belica Igor</p>
+<p><strong>12. HARMONOGRAM PRETEKU</strong><br>
+06:00 – 7:50 - prezentácia losovanie + uvítací drink<br>
+08:00 - 08:50 I. kolo<br>
+09:00 – 09:50 II. kolo<br>
+10:00 – 10:50 III. kolo<br>
+11:00 - 11:50 IV. kolo<br>
+12:00 – 13:00 obedná prestávka<br>
+13:00 - 13:50 V..kolo<br>
+14:00 – 14:50 VI. kolo<br>
+15:30 – vyhodnotenie preteku a odovzdanie cien</p>
+<p><strong>13. INFO</strong><br>
+Michel Norbert - 0907 780 912</p>
+<p><strong>14. UBYTOVANIE</strong><br>
+Možnosti ubytovania - Piešťany</p>
+<p>Tešime sa na Vašu účasť - RZ Záhumnie vo Veľkom Orvišti<br>
+Petrov Zdar.</p>` },
     { day:"10", month:"01", year:"2025", title:"A život ide ďalej", excerpt:"Po jarných pretekoch si mohli členovia aj verejnosť dopriať rybačku v príjemnom prostredí rybníka.", sortDate:"2025-01-10",
-      body:`<p>Po odznení jarnej časti pretekov, po ktorých zostal rybník Záhumnie bohato zarybnený, si mohli členovia, ale aj široká verejnosť, dopriať rybačku a zároveň zrelaxovať v príjemnom prostredí nášho rybníka.</p>
-<p>Už sa stalo tradíciou, že na začiatku leta firma Empíria usporadúva dvojdňový pretek pre svojich odberateľov pod názvom Empíria cup. Tento rok to bol už 6. ročník, ktorý sa opäť vydaril.</p>
-<p>So žiadosťou na TTSK o dotáciu na nákup kosačky sme uspeli a mohli sme zakúpiť motorovú kosačku zn. Husqvarna LC551SP, ktorá nám pomáha udržiavať areál rybníka v príjemnom stave.</p>
-<p>Koncom augusta sme usporiadali pre členov, sponzorov a priateľov rybársky deň s bohatým občerstvením.</p>
-<p>Na jeseň sa konali tradičné preteky Orvištský blyskáč (XIV. ročník), 26. a 27. októbra 2024, s násadou 900 kg pstruha dúhového. V sobotu zvíťazil Marián Michalka (bicykel Kellys), druhý Lukáš Kristín, tretí Pavol Samek – zdolaných 1341 kusov pstruha. V nedeľu vyhral Stanislav Petríček, druhý Martin Čuhanič, tretí Samuel Nagy – zdolaných 697 kusov.</p>
-<p>Druhý ročník Mikulášskeho blyskáča (mix dvojíc) sa konal 30. 11. 2024 na malom rybníku, zúčastnilo sa 17 párov, zdolalo sa 438 kusov pstruha. Zvíťazili Monika Stančíková a Michal Masarech, druhí Veronika Straková a Rado Belovič, tretí Soňa Predná a Miroslav Boor.</p>
-<p>Od 1. 12. 2024 je celý areál otvorený pre lov rýb podľa pravidiel. Počas roku 2024 sme napustili 3300 kg pstruha dúhového a 600 kg kapra rybničného.</p>
-<p>Vidíme sa na Záhumní priatelia. Autor článku Norbert Michel, člen výboru RZ Záhumnie.</p>` },
+      body:`<p>Po odznení jarnej časti pretekov, po ktorých zostal rybník Záhumnie bohato zarybnený, si mohli členovia, ale aj široká verejnosť , dopriať rybačku a zároveň zrelaxovať v príjemnom prostredí nášho rybníka.</p>
+<p>Už sa stalo tradíciou, že na začiatku leta firma Empíria , usporadúva dvojdňový pretek pre svojich odberateľov pod názvom Empíria cup. Tento rok to bol už 6. ročník, ktorý sa opäť vydaril.</p>
+<p>Zo svojou žiadosťou na TTSK (Trnavský samosprávny kraj) o dotáciu na nákup kosačky sme uspeli a mohli sme zakúpiť motorovú kosačku zn. Husqvarna LC551SP. Táto výkonná kosačka s pojazdom, nám pomáha udržiavať areál rybníka v stave, aby sa návštevníci cítili príjemne.</p>
+<p>Koncom mesiaca august sme usporiadali pre členov, sponzorov a priateľov, rybársky deň s bohatým občerstvením. Zišli sa tu ľudia, ktorí nás podporujú v tom čo robíme a radi sa ku nám vracajú. Aj v ten deň sa zvítali pod prístreškom v areáli rybníka ľudia, ktorí sú naladení na rovnakú nôtu a družná debata a smiech trval do neskorých večerných hodín.</p>
+<p>Tak ako sa stalo zvykom ,aj tohto roku na jeseň sme mali naplánované víkendové preteky v love pstruhov na prívlač. V týždni pred pretekmi sme zakúpili násadu pstruha dúhového v množstve 900kg zo Slovryb Príbovce. Jednalo sa o tradičné preteky pod názvom Orvištský blyskáč, ktoré sa konali 26. a 27. októbra 2024. Bo to už XIV. ročník , veľmi populárnych pretekov, nie len na Slovensku ale aj v zahraničí. Prvá cena pre víťaza pretekov je bicykel zn. Kellys. V sobotu 26. 10. si ho odviezol Marián Michalka, na druhom mieste sa umiestnil Lukáš Kristín a bronzovú priečku obsadil Pavol Samek. Pretekári počas pretekov zdolali 1341 kusov pstruha dúhového.</p>
+<p>V nedeľu 27.10. 2024 sa majiteľom bicykla stal Stanislav Petríček, na druhom mieste bol Martin Čuhanič a tretie miesto obsadil Samuel Nagy. V tento deň sa podarilo uloviť 697 kusov pstruha.</p>
+<p>Už v pondelok po pretekoch si mohli členovia a držitelia povoleniek do sýtosti vychutnať super rybačku na rybníku Záhumnie.</p>
+<p>Po minuloročnom veľmi úspešnom preteku pod názvom Mikulášsky blyskáč, sme aj tento rok zorganizovali jeho druhý ročník, Jedná sa o preteky mix dvojíc, kde dvojicu tvorí žena a muž. Stretli sa tu manželské, súrodenecké, rodinné, priateľské ale aj páry, ktoré žijú na divoko, resp. v konkubináte. Tieto preteky sa uskutočnili v sobotu 30. 11. 2024 na malom rybníku. Zúčastnilo sa ho 17 párov (tri sa odhlásili na poslednú chvíľu z rodinných, zdravotných a pracovných dôvodov) Počas pretekov sa zdolalo 438 kusov pstruha dúhového. Prvé miesto obsadili Monika Stančíková a Michal Masarech, získali poháre pre víťazov a kvalitné mäsové výrobky v hodnote min. 200 euro a nástrahy na prívlač, ktoré venovali chlapci z rybárskeho obchodu Slávia Pieťany.</p>
+<p>Druhú priečku obhájili Veronika Straková a Rado Belovič. Aj oni dostali poháre za druhé miesto, výrobky z mäsa v hodnote 150euro a tak isto aj nástrahy na lov rýb.</p>
+<p>Na treťom mieste skončila Soňa Predná a Miroslav Boor, ktorí okrem pohárov za tretie miesto, si odniesli aj mäsové výrobky v hodnote min 100euro a nástrahy zo Slávie. Boli ešte ocenené ďalšie tri páry. Počasie nám veľmi prialo, čo umocnilo atmosféru tohto podujatia a tak isto si všetci pochvaľovali občerstvenie od welcome drinku, raňajok a obeda, ktorý pozostával z kvalitnej fazuľovice a pečených jaterníc.</p>
+<p>Od nedele 1.12.2024 je celý areál rybníka Záhumnie otvorený pre lov rýb, ktoré si môžu držitelia povoleniek uloviť, podľa našich pravidiel, pre vlastnú potrebu. Trochu nás mrzí, že aj nepozvaní hostia – rybožravé predátory, kormorán a čajka morská nám ujedajú z koláča.</p>
+<p>To že vody nášho rybníka sú bohato zarybnené svedčí fakt, že sme počas roka 2024 napustili do neho 3300kg pstruha dúhového a 600kg kapra rybničného. Verím, že tento trend nám vydrží aj do budúcna a budeme môcť stráviť spoločne nezabudnuteľné chvíle na rybníku Záhumnie vo Veľkom Orvišti.</p>
+<p>Vidíme sa na Záhumní priatelia.</p>
+<p>Autor článku Norbert Michel člen výboru RZ Záhumnie.</p>` },
     { day:"13", month:"08", year:"2024", title:"Orviťský blyskáč XIV. ročník", excerpt:"Preteky v love pstruhov na prívlač, 26. a 27. októbra 2024.", sortDate:"2024-08-13",
-      body:`<p>PROPOZÍCIE PRETEKU: jedná sa o dva samostatné preteky.</p>
-<p>Pravidlá zhodné s ostatnými ročníkmi Orvišťského blyskáča – rybárska udica s očkami do 360 cm, lov prívlačou, povinný podberák a pean, zákaz protihrotov a živých/rastlinných nástrah.</p>
-<p><strong>Zarybnenie:</strong> min. 400 kg pred prvým pretekom, min. 200 kg pred druhým, do veľkého aj malého rybníka.</p>
-<p><strong>Štartovné a ceny:</strong> 40 € na sobotu 26. 10., 40 € na nedeľu 27. 10., splatné do 18. októbra 2024. 1. cena – bicykel Kellys v hodnote 800 €, 2. cena 150 €, 3. cena 100 €. Kapacita 60 pretekárov na pretek.</p>
-<p><strong>Organizačný výbor:</strong> Riaditeľ pretekov Michel Norbert, bodovacia komisia Kovačik Jozef a Chrastek Ján, hlavný rozhodca Palkech Marek.</p>
-<p><strong>Info:</strong> Michel Norbert – 0907 780 912. Petrov zdar.</p>` },
+      body:`<p>PROPOZÍCIE PRETEKU: JEDNÁ SA O DVA SAMOSTATNÉ PRETEKY!!!!!</p>
+<p><strong>1. POVOLENÝ PRÚT A VYBAVENIE</strong><br>
+Rybárska udica s očkami do 360 cm dĺžky. Lov rýb prívlačou je spôsob lovu rýb jednou udicou, ktorá sa skladá z rybárskeho prúta s navijakom, vlasca, alebo spletanej šnúry a vláčenej nástrahy, pri ktorom je nástraha ťahaná prerušovaným, alebo súvislým pohybom s cieľom podnietiť ryby k záberu. Záťaž musí byť súčasťou nástrahy. Povinný je podberák a pean.</p>
+<p><strong>2. ZAKÁZANÉ SPÔSOBY A NÁSTRAHY</strong><br>
+Je zakázané používanie všetkých vodných a suchozemských živočíchov ako nástrahy, rastlinných nástrah, napodobneniny ikry, umelá kukurica, cesto, kŕmenie a hádzania rukou alebo strieľanie prakom čohokoľvek do vody, brodenie, používať sbirolino, lov na príves, používať nástrahy, ktoré obsahujú perie, nite, ako prírodné, tak aj umelé, vrátane gumovej striže a kože. Zákaz používať protihroty!!!! Pri porušení zákazov nasleduje diskvalifikácia v kole a pri následovnom porušení diskvalifikácia v preteku.</p>
+<p><strong>3. UZNÁVANÉ ÚLOVKY</strong><br>
+Pstruh dúhový, Sivoň americký. Ryba musí byť zaseknutá v hlavovej časti, ohraničenej líniou žiabrových oblúkov a prsných plutiev.</p>
+<p><strong>4. ZAOBCHÁDZANIE S RYBOU</strong><br>
+Pri zdolávaní musí byť ryba vylovená podberákom.</p>
+<p><strong>5. ŽREBOVANIE, HODNOTENIE A BODOVANIE</strong><br>
+Každá uznaná ryba = 1 bod v danom kole. Súťažiť sa bude v šiestich sektoroch na šesť kôl. Hodnotiť sa bude každý sektor v danom kole zvlášť. Víťazom sektoru sa stáva pretekár s najvyšším súčtom bodovaných rýb v danom kole. Celkovým víťazom pretekov sa stáva pretekár s najnižším súčtom umiestnení v šiestich kolách.<br>
+V prípade rovnosti bodov rozhoduje počet ulovených rýb, v celom preteku. Ak je počet rovnaký, rozhoduje počet ulovených rýb vo 6. kole resp. v 5. kole.</p>
+<p><strong>6. VŠEOBECNÉ USTANOVENIA</strong><br>
+Každý pretekár sa musí chovať a pohybovať v pretekárskom úseku ohľaduplne k ostatným pretekárom a vo svojom okolí udržiavať poriadok. Účastníci sa týchto pretekov zúčastňujú na vlastné nebezpečie a za svoje konanie nesú vlastnú zodpovednosť. Pretekár zdolanú rybu z podberáku ihneď pustí späť do vody. Pretekár, ktorý sa zúčastní prívlačového preteku si môže privlastniť ulovenú rybu pstruha dúhového v max. počte 3ks, a to len v piatich sektoroch, ktoré budú vyznačené na Veľkom rybníku. Na MALOM RYBNÍKU SA RYBA NEPRIVLASTŇUJE!!!!! Tieto privlastnené kusy je povinný humánne zabiť a oznámiť rozhodcovi sektoru, že si ulovenú rybu privlastnil. Rozhodca mu takúto rybu označí v bodovacom preukaze krúžkom. Každé kolo bude zahájené a ukončené trúbením. Ryba zaseknutá pred zvukovým signálom ukončenia kola sa započítava. Po skončení každého kola rozhodca napíše súčet ulovených rýb (pstruh dúhový). Pretekár preškrtne voľné riadky - Bodovací preukaz podpíše a odovzdá rozhodcovi!!!!!!</p>
+<p><strong>7. POČASIE, NEOČAKÁVANÉ SITUÁCIE A NÁHRADA ŠTARTOVNÉHO</strong><br>
+Pretek sa koná za každého počasia s výnimkou prírodných katastrôf. V prípade ak sa pretekár nedostaví, štartovné sa nevracia. V prípade ak sa pretek kvôli nečakanej príčine zruší, štartovné bude vrátené v plnej výške. Organizátor si vyhradzuje právo prispôsobiť pretek nečakane vzniknutej situácii.<br>
+Preteky budú v režime, podľa platnej legislatívy vlády SR k aktuálnemu dátumu pretekov.</p>
+<p><strong>8. PRETEKÁRSKA TRAŤ</strong><br>
+Trať je postavená na jazere RZ Záhumnie vo Veľkom Orvišti - cesta od Piešťan vo Veľkom Orvišti za kostolom do prava smer Pobedím, od Vrbového smer Krakovany, Ostrov , Orvište pred kostolom do ľava smer Pobedím. Jedná sa o stojatú vodu z rozlohou 2ha a hĺbkou od 0.8 - 1.8m. Pretekársky úsek je označený číslami pre každé miesto podľa počtu pretekárov cca 4m. Pretekárska trať bude rozdelená na šesť sektorov, z toho päť bude na veľkom rybníku a jeden na malom ( Trout Land). Pretekár si počas pretekov môže privlastniť tri kusy pstruha IBA na veľkom rybníku.</p>
+<p><strong>9. ZARYBNENIE</strong><br>
+Pred prvým pretekom bude vysadená čerstvá násada - minimálne 400 kg pstruha dúhového, pred druhým pretekom minimálne 200kg pstruha dúhového, do veľkého rybníka a do malého 200kg pstruha dúhového. Voda je zarybnená osádkou pstruha dúhového z predchádzajúcich zarybnení.</p>
+<p><strong>10. ŠTARTOVNÉ A CENY</strong><br>
+Štartovné na sobotu 26. októbra je 40 euro. Na nedeľu 27. októbra je štartovné tak isto 40.euro. Štartovné je potrebné uhradiť tak, aby bolo do 18. októbra 2024 na účte príjemcu. Štartovné je potrebné uhradiť vkladom, alebo bankovým prevodom na č. ú. ČSOB IBAN SK58 7500 0000 0040 2995 2660 Do správy pre adresáta napíšte dátum pretekov, meno a priezvisko, pretekára resp. pretekárov za ktorého platíte. V cene štartovného sú raňajky + káva alebo čaj, obed +-pivo resp. nealko. V nedelu bude zmena obeda. Uzávierka prihlášok je 19. októbra 2024 Počet prihlásených pretekárov na každý pretek je 60 miest. Po naplnení stavu, bude prihlasovanie zastavené, bližšie info na www.rybnikzahumnie.sk alebo 0907 780 912 Pretekár bude pripísaný na štartovnú listinu pretekov, keď štartovné bude pripísané na účte prijímateľa.<br>
+1. cena- bicykel zn. Kellys v hodnote 800 euro<br>
+2. cena- 150 euro hotovosť<br>
+3.cena- 100 euro hotovosť<br>
+Prví traja pretekári obdržia pamätné poháre<br>
+Pretekári na 4. 5. a 6. mieste obdržia vecné ceny.<br>
+Ak sa na pretekoch zúčastnia minimálne štyri ženy, bude vyhodnotená aj kategória žien.</p>
+<p><strong>11. ORGANIZAČNÝ VÝBOR</strong><br>
+Riaditeľ pretekov - Michel Norbert<br>
+Bodovacia komisia – Kovačik Jozef, Chrastek Ján<br>
+Hlavný rozhodca – Palkech Marek</p>
+<p><strong>12. HARMONOGRAM PRETEKU</strong><br>
+06:00 – 7:50 - prezentácia losovanie + uvítací drink<br>
+08:00 - 08:50 I. kolo<br>
+09:00 – 09:50 II. kolo<br>
+10:00 – 10:50 III. kolo<br>
+11:00 - 11:50 IV. kolo<br>
+12:00 – 13:00 obedná prestávka<br>
+13:00 - 13:50 V..kolo<br>
+14:00 – 14:50 VI. kolo<br>
+15:30 – vyhodnotenie preteku a odovzdanie cien</p>
+<p><strong>13. INFO</strong><br>
+Michel Norbert - 0907 780 912</p>
+<p><strong>14. UBYTOVANIE</strong><br>
+Možnosti ubytovania - Piešťany</p>
+<p>Tešime sa na Vašu účasť - RZ Záhumnie vo Veľkom Orvišti<br>
+Petrov Zdar.</p>` },
     { day:"09", month:"06", year:"2024", title:"Už 15 rokov sme tu s vami", excerpt:"Ohliadnutie za 20 prihlásenými dvojicami na pretekoch v love pstruha.", sortDate:"2024-06-09",
-      body:`<p>V septembri 2023 vznikla myšlienka zorganizovať preteky v love pstruha pre zmiešané dvojice. Prihlásilo sa 20 dvojíc, vrátane jedného páru z Česka. Pretek (1. ročník Mikulášsky blyskáč mix dvojíc, 2. december 2023) vyhrali Kateřina Ševčíková a Dominik Švub, druhí Veronika Straková a Rado Belovič, tretí Veronika Janžová a Roman Schwarcz. Zdolalo sa 670 pstruhov.</p>
-<p>Počas roka 2023 sme zarybnili rybník pstruhom dúhovým (3100 kg) a kaprom rybničným (740 kg). Privlastnilo sa 2950 kg pstruha a cca 545 kg kapra.</p>
-<p>VČS sa konala 18. februára 2024, zvolil sa nový výbor a kontrolná komisia na ďalších päť rokov.</p>
-<p>2. marca sa konal Trout master wobler cup (44 pretekárov) – vyhral Samuel Nagy. 3. marca Winter hard baits cup – vyhral Vlado Černek. 10.–11. marca prebehlo prvé kolo Trout ligy jazerná prívlač.</p>
-<p>16.–17. marca sa konal XIV. ročník Jarný pstruh (60 pretekárov, 6 kôl). V sobotu vyhral Roman Schwarcz, medzi ženami Soňa Predná. V nedeľu vyhral Milan Gibon Popovič. Zdolalo sa spolu 2492 kusov pstruha.</p>
-<p>27. apríla sa konal XII. ročník Orvištský šupináč (47 pretekárov, násada 600 kg kapra). Víťazkou sa stala Drahomíra Vaňová s kaprom 11,5 kg / 86 cm, druhý Vlado Vaško (10,84 kg / 89 cm), tretí Imro Munka (10,15 kg / 87 cm).</p>
-<p>Vidíme sa na Záhumní priatelia. Autor článku Norbert Michel.</p>` },
+      body:`<p>Ešte septembri minulého roku ma napadla myšlienka zorganizovať preteky v love pstruha pre dvojice, ktoré by tvorili žena a muž. Po zverejnení oznamu a propozícií sa bez problémov prihlásilo 20 dvojíc, ktoré naplnili stav týchto pretekov. Takýto pretek bol prvý svojho druhu na slovensku a dovolím si tvrdiť že aj na svete. Pred pretekmi sme zarybnili malý rybník násadou pstruha dúhového, v množstve 300kg.Počasie bolo na hrane, no voda nezamrzla, lebo sme sa dobre modlili k sv. Petrovi. Pretekov sa zúčastnili páry z celého Slovenska a jeden pár pricestoval aj z Česka. Ráno 2. decembra sa na rybníku Záhumnie prezentovalo 17 dvojíc a paráda sa mohla začať. (zvyšné tri páry trápili zdravotné problémy, jedného z dvojice). Nachystali sme teplé občerstvenie a výbornú kapustnicu. Tak isto aj hodnotné ceny pre najlepšie páry. Boli to kvalitné mäsové výrobky od nášho priateľa Miška a nástrahy od Rain Bow Baits a tiež od Harmony Baits. Počas pretekov sa podarilo zdolať 670 pstruhov, čo bol vzhľadom na počasie, obdivu hodný výkon. Po skončení ôsmeho kola pretekov, sme spočítali výsledky dvojíc a šesť najlepších. Prvý ročník Mikulášsky blyskáč mix dvojíc 2. decembra 2023 na rybníku Záhumnie vyhral pár z Česka Kateřina Ševčíková a Dominik Švub. Na druhej priečke sa umiestnili, Veronika Straková a Rado Belovič (títo dvaja sa videli prvý krát až u nás na rybníku). No a tretia priečka sa za predvedený výkon ušla dvojici Veronika Janžová a Roman Schwarcz (tento pár to spolu tiahne už nejaký ten piatok a majú dve utešené detičky) Všetci zúčastnení boli nakoniec veľmi spokojní s pretekom a prisľúbili účasť aj v tomto roku na druhom ročníku pretekov, ktoré sú na pláne 28. 11. 2024.</p>
+<p>Počas roku 2023 sme zarybnili rybník Záhumnie pstruhom dúhovým v množstve 3100 kg a kaprom rybničným v množstve 740 kg. Počas celého roka 2023 sa privlastnilo 2950 kg pstruha a cca 545kg kapra. V mesiaci december a aj v januári boli vhodné podmienky na lov rýb.</p>
+<p>V roku 2024 sme prvýkrát doviezli násadu pstruha v stredu 14. februára a v piatok 16. 2. sa začala nová sezóna na čerstvej násade pstruha, čo využila veľká skupina nadšencov tohoto športu.</p>
+<p>VČS sme zvolali 18. februára 2024, na ktorej sme si zvolili nový výbor a aj kontrolnú komisiu na ďalších päť rokov.</p>
+<p>Prvé preteky v tomto roku sme zorganizovali 2. marca pod názvom Trout master wobler cup. Ktorého sa zúčastnilo 44 pretekárov . Na pretekoch sa mohli použiť ako nástraha iba woblery. Víťazom sa stal Samuel Nagy , druhú priečku obsadil Robo Ondrovič a na bronz dosiahol Stanko Petríček. Všetci traja dostali poháre za umiestnenie a poukážky na nákup tovaru v TROUTSHOP.EU</p>
+<p>Hneď na druhý deň 3. marca sa uskutočnil ďalší pretek s názvom Winter hard baits cup, tak isto pre 44 pretekárov . Chytalo sa iba na tvrdé nástrahy (plandavky a woblery) Tento pretek vyhral Vlado Černek na druhej priečke bol Alex Chovan a na tretej Martin Drgoň. Tak ako deň predtým aj tu najlepší získali poháre za umiestnenie a nákupné poukážky. Pred týmto víkendom pribudlo do vody malého rybníka ďalších 300kg pstruha dúhového.</p>
+<p>Už o týždeň cez víkend 10.a 11. marca prebehlo prvé kolo Trout ligy jazerná prívlač. Na túto akciu sme zabezpečili bufet s občerstvením a podieľali sme sa na násade pstruha v množstve 200kg z celkového množstva 600kg ktoré sa napustilo do veľkého rybníka.</p>
+<p>Aby toho nebolo málo, tak 16. a 17. marca 2024 sme mali na Záhumní už XIV. ročník pretekov, pod názvom Jarný pstruh. Preteky boli pre 6o štartujúcich na 6kôl v šiestich sektoroch. Jednalo sa o dva samostatné preteky, kde víťaz získa bicykel zn. Kellys v hodnote 700euro. V sobotu si prvú cenu odniesol za svoj výkon Roman Schwarcz na druhej priečke bol Jakub Nagy a na tretej Alex Chovan. V pretekoch sa chytilo 1408 kusov pstruha dúhového. Medzi ženami zvíťazila Soňa Predná , na striebornom stupni skončila Erika Ďurdíková a na bronzovom stupni Drahomíra Vaňová. Všetci ocenení obdržali poháre podľa umiestenia a vecné ceny</p>
+<p>V nedeľu 17. marca preteky vyhral Milan Gibon Popovič, druhé miesto sa ušlo Romanovi Schwarczovi a na treťom bol Marian Gabčo. Medzi ženami sa poradie zopakovalo ako v sobotu. Počas pretekov v nedeľu sa zdolalo 1084 pstruhov. Počasie nám vyšlo na výbornú, atmosféra bola vynikajúca , organizačne to zvládli všetci zúčastnení a už teraz sa tešíme na jesenné prívlačové bicyklové preteky, ktoré budú 26. a 27. októbra 2024 na Rybníku Záhumnie .</p>
+<p>Po sérii pretekov v prívlači, zostal rybník bohato zarybnený pstruhom dúhovým, čo využili členovia a aj široká verejnosť , a s chuťou si zarybárčili a obohatili svoj jedálniček o kvalitné rybie mäsko.</p>
+<p>Na deň 27. apríl 2024 sme naplánovali a zabezpečili preteky v love kapra, pod názvom Orvištský šupináč. Jednalo sa už o XII. ročník obľúbených pretekov medzi verejnosťou. Pred pretekmi sme do rybníka napustili 600kg kapra výber, z rybnikárstva Pohořelice Zúčastnilo sa ho 47 pretekárov. Pretek sa začal o 7:30a už o 15 minút Fero Karkuš zdolal prvého bodovaného kapra, za čo bol na konci pretekov odmenený. Najviac bodovaných kaprov počas pretekov ulovil Laco Košút a to 13 kusov, za čo sa mu tiež ušla tekutá odmena. Víťazom, resp. víťazkou pretekov sa stala dlhoročná stálica ktorá sa pravidelne zúčastňuje na našom rybníku všetkých pretekov, pani Drahomíra Vaňová z Nového mesta nad Váhom. Drahuška zdolala kapra o hmotnosti 11,5kg a dĺžke 86cm. Za svoj výkon bola odmenená vecnými cenami v hodnote 220 euro a pohárom pre víťaza pretekov. Jej meno bude navždy vyryté na putovnom pohári. Na striebornej priečke sa umiestnil Vlado Vaško, ktorý zdolal kapra o váhe 10,84kg , dlžka bola 89cm. Vlado obdržal pohár za druhé miesto a vecné ceny v hodnote 170 euro. Na tretej priečke sa umiestnil minuloročný víťaz Imro Munka, ten zdolal kapra o váhe 10.15kg a dĺžke 87cm. Tak isto Imro dostal pohár za tretie miesto a vecné ceny v hodnote 120euro. Boli odmenený aj pretekári na 4., 5. a aj 6. mieste vecnými cenami. Všetky vecné ceny nám na preteky poskytli :</p>
+<p>pani Katarína Lipková rybárske potreby DAIV<br>
+pán Martin Mičo rybárske potreby Angelers<br>
+pán Oliver Malo Olík Rybársky Partikel<br>
+RZ Záhumnie</p>
+<p>za čo im veľmi srdečne ďakujeme a tešíme sa na ďalšiu spoluprácu.</p>
+<p>Ešte v polovici mesiaca január, sme si podali žiadosť na VÚC Trnava o dotáciu na nákup kvalitnej motorovej kosačky, ktorá nám bude pomáhať pri údržbe areálu rybnika Záhumnie. Tento areál pravidelne kosíme , čistíme a staráme so oň, aby obyvatelia Veľkého Orvišťa ale aj širokého okolia sa tam cítili spokojne a príjemne. O to viac nás mrzí, keď niektorí nočný návštevníci zanechávajú po sebe odpadky, popísané stoly a prístrešky. Darmo, človek sa učí celý život, raz im to snád dopne a prestanú znevažovať našu snahu vytvoriť niečo pre vás všetkých.</p>
+<p>Na záver mi dovoľte aby som poďakoval vám všetkým, ktorí svojou účasťou na našich podujatiach nás presviedčate, že to robíme dobre. Vidíme sa na Záhumní priatelia.</p>
+<p>Autor článku Norbert Michel</p>` },
     { day:"24", month:"04", year:"2024", title:"Orvištský šupináč XII. ročník", excerpt:"Zoznam pretekárov kaprových pretekov, 27. apríla 2024.", sortDate:"2024-04-24",
       body:`<p>1. Ivan Madunický<br>2. Peter Zubák<br>3. Matej Majerovič<br>4. Marian Vido<br>5. Miloš Majerovič<br>6. Andrej Chytil<br>7. Vlado Šimko<br>8. Lukáš Václav<br>9. Slaviša Petrovič<br>10. Michal Funcik<br>11. Ludovít Jakubek<br>12. Michal Duga<br>13. Andrej Lištiak<br>14. Laco Košút<br>15. Dušan Sopúch<br>16. Dominika Sopúchová<br>17. Imro Munka<br>18. Vlado Vaško<br>19. Zdeněk Jakubčík<br>20. Karel Sehnal<br>21. Fero Karkuš<br>22. Pavol Kadlec<br>23. Martin Balaga<br>24. Michal Plačko<br>25. Ján Gál<br>26. Michal Behan<br>27. Fero Kunst<br>28. Štefan Ambruš<br>29. Daniel Plačko<br>30. Peter Zaťko<br>31. Marek Zaťko<br>32. Jozef Zlatohlávek<br>33. Patrik Molnár<br>34. Lubo Šušuk<br>35. Pavol Kysela<br>36. Vlado Kysela<br>37. Lukáš Maco<br>38. Drahomíra Vaňová<br>39. Dušan Galandák<br>40. Miro Sulák<br>41. Anna Snuríková<br>42. Ján Turček<br>43. Marek Orviský<br>44. Štefan Tomčík<br>45. Oxana Poláková<br>46. Luboš Zaťko<br>47. Robert Bartoš<br>48. RZ Záhumnie<br>49. RZ Záhumnie<br>50. RZ Záhumni</p>` },
     { day:"18", month:"11", year:"2023", title:"Činorodé leto a jeseň na Záhumní", excerpt:"Po kvalitnej jarnej násade si členovia vychutnali rybačku na rybníku.", sortDate:"2023-11-18",
-      body:`<p>Po kvalitnej jarnej násade rýb si mohli členovia ročných a denných povoleniek vychutnať rybačku na rybníku Záhumnie.</p>
-<p>V máji prebehol 5. ročník Empíria cup, dvojdennej akcie s cca 90 účastníkmi.</p>
-<p>V marci sme podali žiadosť na VÚC o dotáciu na revitalizáciu genofondu rýb a vodných živočíchov – financie sme použili na bio prípravok Aqua C Biotics Pro na zlepšenie kvality vody.</p>
-<p>V júli sme usporiadali rybársky deň pre členov, partnerky a priateľov. Na malom rybníku sa upravil vpust, pribudlo nové premostenie a ochranná mreža. Začiatkom septembra pribudlo 12 kusov 10–12 kg kaprov z Pohořelíc, o týždeň 800 kg pstruha dúhového.</p>
-<p>Preteky v prívlači (16.–17. septembra, XIII. ročník) – v sobotu vyhral Ján Lieskovský, medzi ženami Maťa Onofrejová. V nedeľu vyhral Tomáš Mašán, medzi ženami Erika Ďurdíková.</p>
-<p>V októbri sa konal Libra Lures Cup (44 pretekárov) – vyhral Robo Ondrovič zo Senice.</p>
-<p>Na 2. decembra bol naplánovaný prvý pretek mix dvojíc na Slovensku – Mikulášsky blyskáč.</p>
-<p>Vidíme sa na Záhumní priatelia. Autor článku: Norbert Michel, tajomník RZ Záhumnie.</p>` },
+      body:`<p>Po kvalitnej jarnej násade rýb, si mohli členovia ročných a denných povoleniek, vychutnať rybačku na rybníku Záhumnie.</p>
+<p>V máji na rybníku prebehol už 5. ročník Empíria cup, jednalo sa o dvojdennú akciu, ktorej sa zúčastnilo cca 90 ľudí. Všetci účastníci boli spokojný s prostredím a tak isto aj s aktivitou rýb.</p>
+<p>Ešte v mesiaci marec sme podali žiadosť na VÚC o dotáciu na Revitalizáciu genofondu rýb a vodných živočíchov. V tejto žiadosti sme uspeli a získané financie sme použili na nákup bio prípravku pre zlepšenie kvality a úžitkovosti vody, redukciu siníc na neškodné minimum-Aqua C Biotics Pro, ako súčasť projektu zveľadenia oddychovej zóny na rybníku Záhumnie vo Veľkom Orvišti.</p>
+<p>V mesiaci júl sme usporiadali rybársky deň pre členov a ich partnerky a tak isto aj pre priateľov ktorí nám počas roku neváhajú podať pomocnú ruku pri uskutočňovaní našich plánov a pri zabezpečení pretekov. Počas celého obdobia sme na rybníku udržiavali čistotu a podľa potreby sa kosil celý areál. Na malom rybníku sa upravil vpust do rybníka, pribudlo nové premostenie a ochranná mreža. Začiatkom septembra sme obohatili rybník o 12 kusov 10- 12 kilových kaprov z Pohořelíc. O týždeň na to do rybníku pribudla násada pstruha dúhového v množstve 800kg.</p>
+<p>Preteky v prívlači sme zorganizovali 16. a 17. septembra. Jednalo sa o dva samostatné preteky,na každom sa zúčastnilo 60 pretekárov. V sobotu 16. 9. vyhral pretek Ján Lieskovský, medzi ženami triumfovala Maťa Onofrejová. V nedeľu na prvom mieste bol Tomáš Mašán a ženskú kategóriu vyhrala Erika Ďurdíková. Bol to už XIII. ročník tohto obľúbeného preteku, kde víťaz sa stáva majiteľom bicykla zn. Kellys.</p>
+<p>V mesiaci október v areáli Trout Land sa uskutočnil pretek Libra Lures Cup. Tohoto preteku sa zúčastnilo 44 pretekárov zo Slovenska a aj z Česka. Víťazom sa stal Robo Ondrovič zo Senice.</p>
+<p>Aj pred touto akciou sme zakúpili čerstvú násada pstruha v množstve 400kg.</p>
+<p>V tomto období si členovia a široká verejnosť môže vychutnať čaro rybačky na rybníku Záhumnie.</p>
+<p>Na 2. decembra sme naplánovali pretek mix dvojíc v prívlači na malom rybníku. Dvojicu tvorí žena a muž. Ženy budú súťažiť medzi sebou a muži taktiež medzi sebou, potom sa výsledky jednotlivých členov dvojice zrátajú a súčet umiestnenia v kolách preteku určí celkové poradie štartujúcich. Jedná sa o prvý pretek mix dvojíc na Slovensku a dostal názov Mikulášsky blyskáč.</p>
+<p>Pevne verím, že bude obľúbený a bude pravidelne pokračovať aj ďalších rokoch.</p>
+<p>Na záver by som chcel veľmi pekne poďakovať všetkým občanom Veľkého Orvišťa ale aj širokého okolia, ktorí sa zúčastňujú na našich akciách a tým nás podporujú v činnosti a dávajú nám istotu, že to robíme dobre. Tak isto chcem poďakovať aktívnym členom OZ Záhumnie za to, že na úkor svojho voľného času prispievajú k tomu, aby život na rybníku Záhumnie bol príjemný pre všetkých ktorí ho navštevujú, či už len na prechádzke, na pretekoch alebo si prišli aktívne odpočinúť pri love rýb. Vidíme sa na Záhumní priatelia.</p>
+<p>Autor článku: Norbert Michel tajomník RZ Záhumnie</p>` },
   ],
 
   catches: [
