@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body data-page="udalosti">
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
@@ -55,6 +55,7 @@
 
 <section style="padding-top:0;">
   <div class="wrap" style="max-width:800px;">
+    <div id="events-list">
     
   <div class="feature-card" style="display:flex; gap:22px; align-items:flex-start; margin-bottom:16px;">
     <div class="mono" style="text-align:center; min-width:64px; background:var(--ink-deep); color:#fff; border-radius:10px; padding:10px 6px;">
@@ -156,8 +157,9 @@
       <p style="font-size:.92rem; color:var(--ink);">Po kvalitnej jarnej násade si členovia vychutnali rybačku na rybníku.</p>
     </div>
   </div>
+    </div>
     <p style="margin-top:14px; color:var(--ink); font-size:.85rem; font-style:italic;">
-      Zobrazených je 10 najnovších z celkovo 130 historických záznamov (2010–2026). Všetky budú automaticky migrované do databázy eventov – po napojení na admin systém budeš vedieť pridávať, upravovať aj archivovať udalosti priamo cez webové rozhranie.
+      Zobrazené sú ukážkové udalosti. Po pridaní vlastných udalostí cez admin rozhranie sa tento zoznam automaticky aktualizuje.
     </p>
   </div>
 </section>
@@ -220,5 +222,6 @@
   </div>
 </footer>
 
+<script type="module" src="assets/content-loader.js"></script>
 </body>
 </html>
