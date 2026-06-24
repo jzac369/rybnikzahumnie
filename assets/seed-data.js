@@ -18,117 +18,86 @@ export const SEED_DATA = {
       email: "info@rybnikzahumnie.sk",
     },
     rybolov: {
-      content: `<div class="pull-card" style="margin-bottom:30px;">
-  <table style="width:100%; border-collapse:collapse;">
-    <tr><td style="padding:8px 0; font-weight:600;">Vavrinec Peter</td><td class="mono" style="text-align:right;">0911 064 413</td></tr>
-    <tr><td style="padding:8px 0; font-weight:600;">Palkech Marek</td><td class="mono" style="text-align:right;">0944 643 111</td></tr>
-    <tr><td style="padding:8px 0; font-weight:600;">Michel Norbert</td><td class="mono" style="text-align:right;">0907 780 912</td></tr>
-    <tr><td style="padding:8px 0; font-weight:600;">Králik Miroslav</td><td class="mono" style="text-align:right;">0902 106 080</td></tr>
-    <tr><td style="padding:8px 0; font-weight:600;">Email</td><td class="mono" style="text-align:right;">info@rybnikzahumnie.sk</td></tr>
-  </table>
-</div>
-<p style="margin-bottom:20px;">Naše rybárske združenie má k dispozícii dva druhy povolení:</p>
-<div class="feature-grid" style="grid-template-columns:1fr 1fr; margin-bottom:30px;">
-  <div class="feature-card">
-    <span class="num">A · denný lístok</span>
-    <h3>14 € / deň</h3>
-    <ul style="font-size:.92rem; color:var(--ink); padding-left:18px; margin-top:10px;">
-      <li>rybolov je obmedzený len na jeden deň</li>
-      <li>loviaci si môže privlastniť jeden kus ušľachtilej ryby</li>
-      <li>po ulovení ryby lov končí</li>
-      <li>loviaci sa musí riadiť rybárskym poriadkom</li>
-      <li>povolenie sa vracia bezodkladne po skončení lovu</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <span class="num">B · ročný lístok</span>
-    <h3>100 € / rok</h3>
-    <ul style="font-size:.92rem; color:var(--ink); padding-left:18px; margin-top:10px;">
-      <li>rybolov je časovo neobmedzený do konca kalendárneho roka</li>
-      <li>loviaci si môže privlastniť desať kusov ušľachtilej ryby</li>
-      <li>povolenie sa odovzdáva do 15. januára nasledujúceho roka</li>
-      <li>po vyčerpaní limitu možnosť zakúpiť nové povolenie</li>
-    </ul>
-  </div>
-</div>
-<p>V prípade záujmu získania bližších informácií môžete kontaktovať ktoréhokoľvek <a href="zoznam-clenov.html" style="color:var(--water-deep); text-decoration:underline;">člena výboru združenia</a>.</p>
-<p>V prípade záujmu zapožičania rybárskeho náčinia, kliknite <a href="servis.html" style="color:var(--water-deep); text-decoration:underline;">sem</a>.</p>`,
+      content: `<p><strong>Vavrinec Peter</strong> — 0911 064 413<br>
+<strong>Palkech Marek</strong> — 0944 643 111<br>
+<strong>Michel Norbert</strong> — 0907 780 912<br>
+<strong>Králik Miroslav</strong> — 0902 106 080<br>
+<strong>Email</strong> — info@rybnikzahumnie.sk</p>
+<p>Naše rybárske združenie má k dispozícii dva druhy povolení:</p>
+<h3>A. Denný lístok — 14 € / deň</h3>
+<ul>
+<li>rybolov je obmedzený len na jeden deň</li>
+<li>loviaci si môže privlastniť jeden kus ušľachtilej ryby</li>
+<li>po ulovení ryby lov končí</li>
+<li>loviaci sa musí riadiť rybárskym poriadkom</li>
+<li>povolenie sa vracia bezodkladne po skončení lovu</li>
+</ul>
+<h3>B. Ročný lístok — 100 € / rok</h3>
+<ul>
+<li>rybolov je časovo neobmedzený do konca kalendárneho roka</li>
+<li>loviaci si môže privlastniť desať kusov ušľachtilej ryby</li>
+<li>povolenie sa odovzdáva do 15. januára nasledujúceho roka</li>
+<li>po vyčerpaní limitu možnosť zakúpiť nové povolenie</li>
+</ul>
+<p>V prípade záujmu získania bližších informácií môžete kontaktovať ktoréhokoľvek člena výboru združenia.</p>
+<p>V prípade záujmu zapožičania rybárskeho náčinia, pozrite si stránku Servis.</p>`,
     },
     servis: {
-      content: `<div class="pull-card">
-  <p>V prípade záujmu Vám naše združenie vie zapožičať vybavenie pre rybolov.</p>
-  <p>Vzhľadom na Vašu 100% spokojnosť na zverejnení tejto služby zatiaľ pracujeme.</p>
-  <p>Do tejto doby Vám viac informácií poskytne pán <b>Králik Miroslav</b> na telefónnom čísle <span class="mono">00421 902 10 60 80</span>.</p>
-  <p class="signoff">Za pochopenie ďakujeme.</p>
-</div>`,
+      content: `<p>V prípade záujmu Vám naše združenie vie zapožičať vybavenie pre rybolov.</p>
+<p>Vzhľadom na Vašu 100% spokojnosť na zverejnení tejto služby zatiaľ pracujeme.</p>
+<p>Do tejto doby Vám viac informácií poskytne pán <strong>Králik Miroslav</strong> na telefónnom čísle 00421 902 10 60 80.</p>
+<p>Za pochopenie ďakujeme.</p>`,
     },
     gdpr: {
-      content: `<div class="pull-card">
-  <p style="font-size:.95rem;">Pretekár, ktorý sa zúčastní na podujatí, ktoré organizuje RZ Záhumnie vo Veľkom Orvišti, ako dotknutá osoba, v zmysle zákona č. 18/2018 Z. z. o ochrane osobných údajov a v zmysle Nariadenia Európskeho parlamentu a Rady (EÚ) 2016/679, zaplatením štartovného a svojou registráciou súhlasí, aby jeho osobné údaje v rozsahu meno, priezvisko a bydlisko boli organizátorom použité a zverejnené v štartovej a výsledkovej listine pretekárov a zároveň súhlasí so zverejnením obrazového záznamu (foto+video) vyhotoveného počas pretekov.</p>
-</div>`,
+      content: `<p>Pretekár, ktorý sa zúčastní na podujatí, ktoré organizuje RZ Záhumnie vo Veľkom Orvišti, ako dotknutá osoba, v zmysle zákona č. 18/2018 Z. z. o ochrane osobných údajov a v zmysle Nariadenia Európskeho parlamentu a Rady (EÚ) 2016/679, zaplatením štartovného a svojou registráciou súhlasí, aby jeho osobné údaje v rozsahu meno, priezvisko a bydlisko boli organizátorom použité a zverejnené v štartovej a výsledkovej listine pretekárov a zároveň súhlasí so zverejnením obrazového záznamu (foto+video) vyhotoveného počas pretekov.</p>`,
     },
     "zoznam-clenov": {
-      content: `<div class="pull-card" style="margin-bottom:30px; overflow-x:auto;">
-  <table style="width:100%; border-collapse:collapse;">
-    <thead><tr style="border-bottom:1px solid var(--sand-line); font-size:.78rem; text-transform:uppercase; letter-spacing:1px; color:var(--water-deep);">
-      <td style="padding-bottom:10px;">Č.</td><td style="padding-bottom:10px;">Meno</td><td style="padding-bottom:10px;">Funkcia</td><td style="padding-bottom:10px; text-align:right;">Telefón</td>
-    </tr></thead>
-    <tbody>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">1</td><td style="padding:10px 0; font-weight:600;">Vavrinec Peter</td><td style="padding:10px 0;">Predseda združenia</td><td class="mono" style="padding:10px 0; text-align:right;">0911 064 413</td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">2</td><td style="padding:10px 0; font-weight:600;">Palkech Marek</td><td style="padding:10px 0;">Podpredseda združenia</td><td class="mono" style="padding:10px 0; text-align:right;">0944 643 111</td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">3</td><td style="padding:10px 0; font-weight:600;">Michel Norbert</td><td style="padding:10px 0;">Tajomník združenia</td><td class="mono" style="padding:10px 0; text-align:right;">0907 780 912</td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">4</td><td style="padding:10px 0; font-weight:600;">Chrastek Ján</td><td style="padding:10px 0;">Pokladník združenia</td><td class="mono" style="padding:10px 0; text-align:right;"></td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">5</td><td style="padding:10px 0; font-weight:600;">Bolješik Ján</td><td style="padding:10px 0;">Sekretár</td><td class="mono" style="padding:10px 0; text-align:right;"></td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">6</td><td style="padding:10px 0; font-weight:600;">Králik Miroslav</td><td style="padding:10px 0;">Predseda RK</td><td class="mono" style="padding:10px 0; text-align:right;">0902 106 080</td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">7</td><td style="padding:10px 0; font-weight:600;">Pánik Emil</td><td style="padding:10px 0;">Člen RK</td><td class="mono" style="padding:10px 0; text-align:right;"></td></tr>
-      <tr><td class="mono" style="padding:10px 0; color:var(--water-deep);">8</td><td style="padding:10px 0; font-weight:600;">Mokoš Stanislav</td><td style="padding:10px 0;">Člen RK</td><td class="mono" style="padding:10px 0; text-align:right;"></td></tr>
-    </tbody>
-  </table>
-</div>
-<h3 style="margin-bottom:16px; font-size:1.1rem;">Ostatní členovia</h3>
-<div>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">9. Belica Igor</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">10. Bejdák Ondrej ml.</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">11. Bejdák Ondrej st.</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">12. Hulvan Miloš</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">13. Kovačik Jozef st.</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">14. Kovačik Jozef ml.</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">15. Melicher Ivan</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">16. Mokoš Ján</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">17. Mokoš Peter</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">18. Moravčík Peter</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">19. Polák Milan</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">20. Summer Antón</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">21. Tešedík Milan</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">22. Toman Peter</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">23. Vavrinec Marián</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">24. Vavrinec Matej</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">25. Majerčík Miloš</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">26. Potoček Ján</span>
-  <span style="display:inline-block; background:var(--sand); border-radius:20px; padding:7px 16px; margin:0 6px 10px 0; font-size:.88rem;">27. Strečanský Peter</span>
-</div>
-<p style="margin-top:20px; font-size:.92rem;"><b>Vavrinec Michal</b> — kandidát</p>`,
+      content: `<h3>Výkonný výbor a revízna komisia</h3>
+<p>1. <strong>Vavrinec Peter</strong> — predseda združenia — 0911 064 413<br>
+2. <strong>Palkech Marek</strong> — podpredseda združenia — 0944 643 111<br>
+3. <strong>Michel Norbert</strong> — tajomník združenia — 0907 780 912<br>
+4. <strong>Chrastek Ján</strong> — pokladník združenia<br>
+5. <strong>Bolješik Ján</strong> — sekretár<br>
+6. <strong>Králik Miroslav</strong> — predseda RK — 0902 106 080<br>
+7. <strong>Pánik Emil</strong> — člen RK<br>
+8. <strong>Mokoš Stanislav</strong> — člen RK</p>
+<h3>Ostatní členovia</h3>
+<p>9. Belica Igor<br>
+10. Bejdák Ondrej ml.<br>
+11. Bejdák Ondrej st.<br>
+12. Hulvan Miloš<br>
+13. Kovačik Jozef st.<br>
+14. Kovačik Jozef ml.<br>
+15. Melicher Ivan<br>
+16. Mokoš Ján<br>
+17. Mokoš Peter<br>
+18. Moravčík Peter<br>
+19. Polák Milan<br>
+20. Summer Antón<br>
+21. Tešedík Milan<br>
+22. Toman Peter<br>
+23. Vavrinec Marián<br>
+24. Vavrinec Matej<br>
+25. Majerčík Miloš<br>
+26. Potoček Ján<br>
+27. Strečanský Peter</p>
+<p><strong>Vavrinec Michal</strong> — kandidát</p>`,
     },
     stanovy: {
-      content: `<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Úvodné ustanovenie</h4>
+      content: `<h3>Úvodné ustanovenie</h3>
   <p>Rybárske združenie Záhumnie – Veľké Orvište je združenie občanov založené v súlade so Zákonom č. 83/90 Zb. o združovaní občanov. Združuje občanov Veľkého Orvišťa a ich priateľov, ktorých spája spoločný záujem o:</p>
   <p>a) súhrn činností zameraných na zachovanie, zveľaďovanie a ochranu genofondu rýb,<br>
   b) využívanie rybárskeho práva v súlade so zákonom o rybárstve,<br>
   c) ochranu prírody a životného prostredia na úseku rybárstva,<br>
   d) starostlivosť, ekológiu vôd a okolitej prírody vodných tokov v katastrálnom území Veľké Orvište.</p>
   <p>Vo vnútri i navonok združenie presadzuje základné princípy spolupráce, vzájomnej pomoci, tolerancie a porozumenia v duchu demokracie. Združenie sa riadi zásadami kolektívneho vedenia a rozhodovania, pri zachovaní demokracie a disciplíny.</p>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Názov, sídlo a územná pôsobnosť</h4>
+<h3>Názov, sídlo a územná pôsobnosť</h3>
   <p>Názov organizácie: <b>Rybárske združenie Záhumnie – Veľké Orvište</b><br>
   Sídlo zväzu: Hlavná 17, 922 01 Veľké Orvište, okr. Piešťany<br>
   Pôsobnosť zväzu sa vzťahuje na katastrálne územie Veľkého Orvišťa.</p>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Poslanie a ciele združenia</h4>
+<h3>Poslanie a ciele združenia</h3>
   <ol style="padding-left:18px; font-size:.95rem; color:var(--ink);">
     <li>Cieľom združenia je súhrn činností zameraných na zachovanie, zveľaďovanie a ochranu genofondu rýb.</li>
     <li>Prispievať k racionálnemu využívaniu a zveľaďovaniu prírodných zdrojov v oblasti rybárstva, k ochrane a tvorbe zdravého životného prostredia, ako aj k zlepšeniu ekológie vodných tokov a ostatných vodných plôch z hľadiska rybárskych záujmov.</li>
@@ -140,10 +109,8 @@ export const SEED_DATA = {
     <li>V oblasti rekreačného a športového rybárstva sa zúčastňovať a organizovať podujatia (preteky, semináre, akcie).</li>
     <li>Starať sa o kultúrnu a odbornú výchovu členov združenia, poskytovať im pomoc v ich záujmovej rybárskej činnosti a uplatňovaní osobných záľub v záujme umožnenia aktívneho odpočinku.</li>
   </ol>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Členstvo</h4>
+<h3>Členstvo</h3>
   <p>1. Členstvo v združení je dobrovoľné.</p>
   <p>2. Členom sa môže stať občan Slovenskej republiky (ďalej len občan), ktorý dovŕšil 18 rokov veku a spĺňa tieto podmienky:</p>
   <p>a) súhlasí so stanovami občianskeho združenia a zaväzuje sa nimi riadiť,<br>
@@ -169,10 +136,8 @@ export const SEED_DATA = {
   b) vylúčením člena,<br>
   c) úmrtím člena,<br>
   d) zánikom združenia.</p>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Orgány združenia</h4>
+<h3>Orgány združenia</h3>
   <p><b>1. Najvyšší orgán - členská schôdza.</b> Tvoria ju všetci členovia združenia.<br>
   a) rozhoduje o zániku združenia,<br>
   b) schvaľuje stanovy, ich zmeny a doplnky,<br>
@@ -188,26 +153,20 @@ export const SEED_DATA = {
   a) je kontrolným orgánom združenia, zodpovedá sa najvyššiemu orgánu združenia,<br>
   b) kontroluje hospodárenie združenia,<br>
   c) kontroluje dodržiavanie stanov a vnútorných predpisov.</p>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Zásady hospodárenia</h4>
+<h3>Zásady hospodárenia</h3>
   <p>1. Združenie hospodári s vlastným majetkom a môže tiež hospodáriť s hnuteľným a nehnuteľným majetkom, ktorý prevzal do dočasného užívania.</p>
   <p>2. Združenie je povinné hospodáriť tak, aby riadne plnilo svoje úlohy a plne krylo výdavky z vlastných príjmov alebo z pridelených finančných prostriedkov.</p>
   <p>3. Finančné prostriedky na plnenie svojich úloh združenie získava: z členských príspevkov a zápisného, z príjmov za povolenia na rybolov, z príjmov rôznych akcií, z darov a iných prímov.</p>
   <p>4. Základným predpisom pre nakladanie s finančnými prostriedkami je rozpočet schválený členskou schôdzou združenia.</p>
   <p>5. Výnosy z majetku a vlastnej činnosti, môžu byť použité len na podporu cieľov združenia. V záujme vytvárania vlastných zdrojov môže združenie vykonávať v doplnkovom rozsahu činnosť vo vzťahu k záujmovej činnosti, súvisiacu so zabezpečením cieľov združenia.</p>
-</div>
 
-<div class="pull-card">
-  <h4>Zánik združenia</h4>
-  <p>O zániku združenia rozhoduje členská schôdza trojpätinovou väčšinou prítomných členov schôdze. Menuje likvidátora, ktorý vyrovná všetky záväzky a pohľadávky a s likvidačným zostatkom naloží podľa rozhodnutia členskej schôdze združenia. Zánik združenia treba oznámiť do 15 dní po ukončení likvidácie Ministerstvu vnútra Slovenskej republiky.</p>
-</div>`,
+<h3>Zánik združenia</h3>
+  <p>O zániku združenia rozhoduje členská schôdza trojpätinovou väčšinou prítomných členov schôdze. Menuje likvidátora, ktorý vyrovná všetky záväzky a pohľadávky a s likvidačným zostatkom naloží podľa rozhodnutia členskej schôdze združenia. Zánik združenia treba oznámiť do 15 dní po ukončení likvidácie Ministerstvu vnútra Slovenskej republiky.</p>`,
     },
     poriadok: {
-      content: `<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Článok 1 — Všeobecné zásady</h4>
-  <p style="font-size:.93rem;">1. Každý kto loví ryby a iné vodné živočíchy musí mať pri sebe povolenie na rybolov miestneho rybárskeho združenia.<br>
+      content: `<h3>Článok 1 — Všeobecné zásady</h3>
+  <p>1. Každý kto loví ryby a iné vodné živočíchy musí mať pri sebe povolenie na rybolov miestneho rybárskeho združenia.<br>
   2. Loviť sa smie maximálne na dve udice, vzdialené od seba max 3 metre.<br>
   3. Loviaci musí mať osvetlené miesto lovu bezprostredne po zotmení.<br>
   4. Loviaci si môže privlastniť v jednom dni lovu najviac: 2 ks ušľachtilých rýb: kapra, zubáča veľkoústeho, šťuky severskej, sumca, prípadne kombináciu dvoch kusov týchto rýb, ale najviac 7kg za 1 deň; alebo 4 ks lososovitých rýb; alebo 1 ušľachtilá ryba + 4 ks lososovitých rýb; alebo 3 kg bielej ryby.<br>
@@ -222,45 +181,38 @@ export const SEED_DATA = {
   13. Stanovené miery ušľachtilých rýb: kapor: 45 – 65 cm, zubáč: 50 cm, šťuka: 60 cm, pstruh: 25 cm, amur: 70 cm.<br>
   14. Povolenie lovu nástrahových rybiek je v úsekoch od cesty po vstup do rybníka a od výtoku z rybníka po závlahovú rúlu. Povolenie lovu nástrahových rybiek v malom rybníku na bič. Platí druhové hájenie.<br>
   15. Lov lieňa, jesetera a ich privlastnenie je zakázané.</p>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Článok 2 — Denné doby lovu</h4>
-  <p style="font-size:.93rem;"><b>A, Pre členov združenia, nečlenov s ročným a denným povolením:</b><br>
+<h3>Článok 2 — Denné doby lovu</h3>
+  <p><b>A, Pre členov združenia, nečlenov s ročným a denným povolením:</b><br>
   1.1. – 15.3. povolený lov kapra, pstruha a amura (zákaz lovu dravca a na prívlač).<br>
   15.3. – do ukončenia kaprových pretekov všeobecný zákaz lovu.<br>
   Letná sezóna začína deň po kaprových pretekoch do 31.10. s časom lovu od 04.00 – 24.00 hod.<br>
   1.11 – 31.12. denne od 07.00 - 20.00 hod.<br><br>
   V letných mesiacoch júl, august, september je povolený lov rýb cez víkend s nasledovným časom lovu v piatok od 4.00 hod do nedele do 24.00 hod nepretržite.</p>
-  <p style="font-size:.93rem;"><b>B, Pre deti a juniorov:</b><br>
+  <p><b>B, Pre deti a juniorov:</b><br>
   január, február, marec, apríl — zákaz lovu všetkých druhov rýb<br>
   máj, jún, júl, august — piatok od 15.00 do 24.00 hod, sobota od 05.00 do 24.00 hod, nedeľa od 05.00 do 24.00 hod<br>
   september, október — sobota od 06.00 do 21.00 hod, nedeľa od 06.00 do 21.00 hod<br>
   november, december — sobota od 07.00 do 20.00 hod, nedeľa od 07.00 do 20.00 hod<br><br>
   Deti a juniori majú povolený lov rýb aj v týždni počas letných prázdnin v dobe od 1.7. do 31.8. v čase od 4.00 do 24.00 hod. Pre deti do 15 rokov, je pri love potrebný dozor plnoletej osoby.<br><br>
   Výkonný výbor si vyhradzuje právo zmeny denného lovu rýb, počas celého roka, po predošlom odsúhlasení výkonným výborom združenia. Platnosť tohto rozhodnutia nadobúda účinnosť nasledujúci deň po schválení výkonným výborom združenia, ak nie je v návrhu uvedené inak.</p>
-</div>
 
-<div class="pull-card" style="margin-bottom:24px;">
-  <h4>Článok 3 — Zakázané spôsoby lovu rýb</h4>
-  <p style="font-size:.93rem;"><b>Zakazuje sa:</b><br>
+<h3>Článok 3 — Zakázané spôsoby lovu rýb</h3>
+  <p><b>Zakazuje sa:</b><br>
   a) používať na lov rýb výbušniny, otravné látky, harpúny, bodce, udice bez prútov, ako aj strieľať ryby, loviť ryby pod ľadom, loviť ich na šnúry a podsekávaním udicou, do rúk a ôk,<br>
   b) zbierať ikry, používať na lov rýb elektrický prúd, omamné látky, loviť ryby v noci za pomoci svetla, používať lapadlá, vrše, koše a pod., loviť ryby v rybovode a vo vyznačenom úseku nad ním a pod ním, v prítokovom a odtokovom kanále okrem úsekov vyšpecifikovaných v článku 1 bod 14, používať akékoľvek stále zariadenia na lovenie rýb alebo siete a zabraňovať ťahu rýb proti vode,<br>
   c) loviť ryby na miestach, kde sa nahromadili pri mimoriadnych situáciách, ako aj ryby zhromaždené v čase neresu a na zimoviskách,<br>
   d) loviť ryby vypustením, odhradením alebo odčerpaním vody,<br>
   e) loviť ryby do stavačky.</p>
-</div>
 
-<div class="pull-card">
-  <h4>Článok 4 — Všeobecné ustanovenia</h4>
-  <p style="font-size:.93rem;">1. Návštevník vodnej plochy a priľahlých pozemkov (ďalej len „Záhumnie“) je povinný udržovať pokoj a poriadok.<br>
+<h3>Článok 4 — Všeobecné ustanovenia</h3>
+  <p>1. Návštevník vodnej plochy a priľahlých pozemkov (ďalej len „Záhumnie“) je povinný udržovať pokoj a poriadok.<br>
   2. Zakladať oheň sa môže len na miestach na to určených.<br>
   3. Jazda na skútroch, motorkách, automobiloch a iných motorových vozidlách v okolí vodnej plochy je zakázaná.<br>
   4. Parkovanie motorových vozidiel je povolené len na to vyhradených miestach.<br>
   5. Poškodzovanie prírody a majetku je zakázané.<br>
   6. Nedodržiavanie ustanovení tohto miestneho poriadku sa bude považovať za jeho hrubé porušenie, ktoré bude postihované podľa príslušných zákonov a všeobecne záväzných právnych predpisov.</p>
-  <p style="margin-top:16px; font-size:.9rem;"><b>Jozef Kováčik</b> — predseda združenia<br><b>Zdeno Markech</b> — podpredseda združenia<br><b>Norbert Michel</b> — tajomník združenia</p>
-</div>`,
+  <p><b>Jozef Kováčik</b> — predseda združenia<br><b>Zdeno Markech</b> — podpredseda združenia<br><b>Norbert Michel</b> — tajomník združenia</p>`,
     },
   },
 
