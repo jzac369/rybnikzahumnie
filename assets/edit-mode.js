@@ -141,35 +141,47 @@ function enableTextEditing() {
 }
 
 // ---------- Inline events management on udalosti.html ----------
+function dateToParts(dateStr) {
+  const [y, m, d] = dateStr.split('-');
+  return { day: d, month: m, year: y };
+}
+
 async function enableEventsAdmin() {
   const list = document.getElementById('events-list');
   if (!list) return;
+  await loadQuill();
 
   const wrap = document.createElement('div');
   wrap.style.marginBottom = '24px';
   wrap.innerHTML = `
     <div class="cms-event-admin-row">
-      <input type="text" placeholder="Deň" id="ev-day" style="width:60px;">
-      <input type="text" placeholder="Mesiac" id="ev-month" style="width:70px;">
-      <input type="text" placeholder="Rok" id="ev-year" style="width:80px;">
+      <input type="date" id="ev-date" style="flex:0 0 160px;">
       <input type="text" placeholder="Názov udalosti" id="ev-title" style="flex:1;">
     </div>
     <div class="cms-event-admin-row">
-      <input type="text" placeholder="Krátky popis" id="ev-excerpt" style="flex:1;">
-      <button class="cms-save-btn" id="ev-add-btn">+ Pridať udalosť</button>
-    </div>`;
+      <input type="text" placeholder="Krátky popis (zobrazí sa v zozname)" id="ev-excerpt" style="flex:1;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <div style="font-size:.8rem; color:var(--ink); margin-bottom:4px;">Plný text (nepovinné, zobrazí sa po rozkliknutí "Čítať viac")</div>
+      <div id="ev-body-editor"></div>
+    </div>
+    <button class="cms-save-btn" id="ev-add-btn">+ Pridať udalosť</button>`;
   list.parentNode.insertBefore(wrap, list);
+  const bodyEditor = makeEditor('ev-body-editor');
 
   async function render() {
     const q = query(collection(db, "events"), orderBy("sortDate", "desc"));
     const snap = await getDocs(q);
     list.innerHTML = '';
-    snap.forEach(d => {
-      const e = d.data();
-      const row = document.createElement('div');
-      row.className = 'feature-card';
-      row.style = 'display:flex; gap:22px; align-items:flex-start; margin-bottom:16px; justify-content:space-between;';
-      row.innerHTML = `
+    snap.forEach(d => renderEventRow(d.id, d.data()));
+  }
+
+  function renderEventRow(id, e) {
+    const row = document.createElement('div');
+    row.className = 'feature-card';
+    row.style = 'margin-bottom:16px;';
+    row.innerHTML = `
+      <div style="display:flex; gap:22px; align-items:flex-start; justify-content:space-between;">
         <div style="display:flex; gap:22px;">
           <div class="mono" style="text-align:center; min-width:64px; background:var(--ink-deep); color:#fff; border-radius:10px; padding:10px 6px;">
             <div style="font-size:1.4rem; font-weight:700; line-height:1;">${e.day || ''}</div>
@@ -178,28 +190,69 @@ async function enableEventsAdmin() {
           <div>
             <h3 style="font-size:1.08rem; margin-bottom:6px;">${e.title || ''}</h3>
             <p style="font-size:.92rem; color:var(--ink);">${e.excerpt || ''}</p>
+            ${e.body ? `<details style="margin-top:8px;"><summary style="cursor:pointer; color:var(--water-deep); font-size:.85rem;">Čítať viac</summary><div style="margin-top:10px; font-size:.92rem;">${e.body}</div></details>` : ''}
           </div>
         </div>
-        <button class="cms-event-delete">Zmazať</button>`;
-      row.querySelector('.cms-event-delete').addEventListener('click', async () => {
-        if (confirm('Naozaj zmazať túto udalosť?')) { await deleteDoc(doc(db, "events", d.id)); render(); }
-      });
-      list.appendChild(row);
+        <div style="display:flex; gap:8px; flex-shrink:0;">
+          <button class="cms-edit-btn">✏️ Upraviť</button>
+          <button class="cms-event-delete">Zmazať</button>
+        </div>
+      </div>`;
+    row.querySelector('.cms-event-delete').addEventListener('click', async () => {
+      if (confirm('Naozaj zmazať túto udalosť?')) { await deleteDoc(doc(db, "events", id)); render(); }
     });
+    row.querySelector('.cms-edit-btn').addEventListener('click', () => openEventEditForm(row, id, e));
+    list.appendChild(row);
+  }
+
+  function openEventEditForm(row, id, e) {
+    const sortDate = e.sortDate || '';
+    row.innerHTML = `
+      <div class="cms-event-admin-row">
+        <input type="date" class="edit-date" value="${sortDate}" style="flex:0 0 160px;">
+        <input type="text" class="edit-title" value="${(e.title||'').replace(/"/g,'&quot;')}" style="flex:1;">
+      </div>
+      <div class="cms-event-admin-row">
+        <input type="text" class="edit-excerpt" value="${(e.excerpt||'').replace(/"/g,'&quot;')}" style="flex:1;">
+      </div>
+      <div class="edit-body-mount" style="margin-bottom:10px;"></div>
+      <div class="cms-save-cancel">
+        <button class="cms-save-btn">Uložiť</button>
+        <button class="cms-cancel-btn">Zrušiť</button>
+      </div>`;
+    const editQuill = makeEditor(row.querySelector('.edit-body-mount').id || (row.querySelector('.edit-body-mount').id = 'mount-' + id));
+    editQuill.clipboard.dangerouslyPasteHTML(e.body || '');
+    row.querySelector('.cms-save-btn').addEventListener('click', async () => {
+      const dateVal = row.querySelector('.edit-date').value;
+      const parts = dateVal ? dateToParts(dateVal) : { day: e.day, month: e.month, year: e.year };
+      const updated = {
+        title: row.querySelector('.edit-title').value.trim(),
+        excerpt: row.querySelector('.edit-excerpt').value.trim(),
+        body: editQuill.root.innerHTML,
+        sortDate: dateVal || sortDate,
+        day: parts.day, month: parts.month, year: parts.year,
+      };
+      await setDoc(doc(db, "events", id), updated, { merge: true });
+      toast('Udalosť uložená ✓');
+      render();
+    });
+    row.querySelector('.cms-cancel-btn').addEventListener('click', render);
   }
 
   wrap.querySelector('#ev-add-btn').addEventListener('click', async () => {
-    const day = document.getElementById('ev-day').value.trim();
-    const month = document.getElementById('ev-month').value.trim();
-    const year = document.getElementById('ev-year').value.trim();
+    const dateVal = document.getElementById('ev-date').value;
     const title = document.getElementById('ev-title').value.trim();
     const excerpt = document.getElementById('ev-excerpt').value.trim();
-    if (!title || !year) { alert('Vyplň aspoň názov a rok.'); return; }
-    const sortDate = `${year.padStart(4,'0')}-${month.padStart(2,'0')}-${day.padStart(2,'0')}`;
-    await addDoc(collection(db, "events"), { day, month, year, title, excerpt, sortDate });
-    ['ev-day','ev-month','ev-year','ev-title','ev-excerpt'].forEach(id => document.getElementById(id).value = '');
+    const body = bodyEditor.root.innerHTML;
+    if (!title || !dateVal) { alert('Vyplň aspoň dátum a názov udalosti.'); return; }
+    const parts = dateToParts(dateVal);
+    await addDoc(collection(db, "events"), { ...parts, title, excerpt, body, sortDate: dateVal });
+    document.getElementById('ev-date').value = '';
+    document.getElementById('ev-title').value = '';
+    document.getElementById('ev-excerpt').value = '';
+    bodyEditor.setContents([]);
     render();
-    toast('Udalosť pridaná ✓');
+    toast('Udalosť pridaná ✓ — zobrazuje sa podľa dátumu udalosti.');
   });
 
   render();
