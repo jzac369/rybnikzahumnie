@@ -3,6 +3,7 @@ import {
   auth, db, doc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy,
   onAuthStateChanged, signOut
 } from "./firebase-init.js";
+import { SEED_DATA } from "./seed-data.js";
 
 let quillLoaded = false;
 function loadQuill() {
@@ -150,6 +151,28 @@ async function enableEventsAdmin() {
   const list = document.getElementById('events-list');
   if (!list) return;
   await loadQuill();
+
+  const patchWrap = document.createElement('div');
+  patchWrap.style.marginBottom = '18px';
+  patchWrap.innerHTML = `<button class="cms-cancel-btn" id="ev-patch-btn">⤓ Doplniť plné texty k existujúcim ukážkovým udalostiam</button> <span id="ev-patch-status" style="font-size:.82rem; color:var(--ink); margin-left:10px;"></span>`;
+  list.parentNode.insertBefore(patchWrap, list);
+  patchWrap.querySelector('#ev-patch-btn').addEventListener('click', async () => {
+    const statusEl = document.getElementById('ev-patch-status');
+    statusEl.textContent = 'Pracujem...';
+    const snap = await getDocs(collection(db, "events"));
+    let matched = 0, skipped = 0;
+    for (const docSnap of snap.docs) {
+      const existing = docSnap.data();
+      if (existing.body) { skipped++; continue; }
+      const seedMatch = SEED_DATA.events.find(se => se.title === existing.title);
+      if (seedMatch) {
+        await setDoc(doc(db, "events", docSnap.id), { body: seedMatch.body }, { merge: true });
+        matched++;
+      }
+    }
+    statusEl.textContent = `Hotovo — doplnených ${matched}, preskočených (už mali text) ${skipped}.`;
+    render();
+  });
 
   const wrap = document.createElement('div');
   wrap.style.marginBottom = '24px';
