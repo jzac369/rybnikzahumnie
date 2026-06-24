@@ -211,6 +211,9 @@
     .feature-grid{ grid-template-columns:1fr; }
     .footer-grid{ grid-template-columns:1fr; }
   }
+  .albums-list{ column-count:3; column-gap:18px; }
+  .albums-list .album-card{ break-inside:avoid; margin-bottom:18px; display:block; width:100%; }
+  @media(max-width:880px){ .albums-list{ column-count:1; } }
   @media (prefers-reduced-motion: reduce){
     .badge-ring{ animation:none; }
   }
