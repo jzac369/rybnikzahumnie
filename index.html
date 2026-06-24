@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rybárske združenie Záhumnie – Veľké Orvište</title>
+<meta name="description" content="Rybárske združenie je správcom vodnej plochy Záhumnie v obci Veľké Orvište. Občianske združenie založené v roku 2009, ktoré ponúka športový rybolov pre členov aj širokú verejnosť.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#4A3526;
+    --ink-deep:#352416;
+    --parchment:#F3ECD9;
+    --parchment-soft:#FAF6EA;
+    --sand:#E3D9B8;
+    --sand-line:#CFC09A;
+    --water:#2F6B6B;
+    --water-deep:#21504F;
+    --charcoal:#2B2520;
+    --white:#FFFFFF;
+    --shadow: 0 12px 30px -10px rgba(74,53,38,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--parchment);
+    color:var(--charcoal);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{ font-family:'Bitter', serif; color:var(--ink-deep); line-height:1.15; }
+  a{ color:inherit; text-decoration:none; }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  /* texture */
+  body::before{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(74,53,38,.05) 1px, transparent 0);
+    background-size: 22px 22px;
+    opacity:.6;
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(243,236,217,.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--sand-line);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; max-width:1180px; margin:0 auto;}
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ height:54px; width:auto; display:block; }
+  .brand-text{ font-family:'Bitter', serif; font-weight:700; font-size:1.05rem; color:var(--ink-deep); letter-spacing:.2px;}
+  .brand-text span{ display:block; font-family:'Work Sans',sans-serif; font-weight:500; font-size:.72rem; color:var(--water-deep); letter-spacing:1.5px; text-transform:uppercase; margin-top:2px;}
+  nav.links{ display:flex; align-items:center; gap:6px; font-size:.93rem; font-weight:500;}
+  nav.links > a, nav.links > .dropdown > button{
+    padding:10px 14px; border-radius:6px; border:none; background:none; cursor:pointer;
+    font-family:'Work Sans',sans-serif; font-size:.93rem; font-weight:500; color:var(--ink);
+    transition:.2s;
+  }
+  nav.links > a:hover, nav.links > .dropdown > button:hover{ background:var(--sand); color:var(--ink-deep);}
+  .dropdown{ position:relative; }
+  .dropdown-menu{
+    position:absolute; top:110%; left:0; background:var(--white); border:1px solid var(--sand-line);
+    border-radius:10px; box-shadow:var(--shadow); min-width:230px; padding:6px; opacity:0; visibility:hidden;
+    transform:translateY(-6px); transition:.18s; z-index:60;
+  }
+  .dropdown:hover .dropdown-menu{ opacity:1; visibility:visible; transform:translateY(0);}
+  .dropdown-menu a{ display:block; padding:10px 14px; border-radius:7px; font-size:.88rem; color:var(--charcoal);}
+  .dropdown-menu a:hover{ background:var(--parchment); color:var(--water-deep);}
+  .cta-btn{
+    background:var(--water); color:#fff !important; padding:10px 20px; border-radius:7px; font-weight:600;
+  }
+  .cta-btn:hover{ background:var(--water-deep) !important; }
+  .burger{ display:none; }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; z-index:1;
+    padding:84px 28px 70px;
+    max-width:1180px; margin:0 auto;
+    display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center;
+  }
+  .hero-quote{
+    font-family:'Bitter', serif; font-style:italic; font-size:.95rem; color:var(--water-deep);
+    border-left:3px solid var(--water); padding-left:14px; margin-bottom:24px; max-width:480px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.4vw, 3.6rem); font-weight:800; margin-bottom:14px;
+  }
+  .hero h1 em{ font-style:normal; color:var(--water-deep); }
+  .hero p.lead{
+    font-size:1.12rem; color:var(--ink); max-width:520px; margin-bottom:30px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:8px; font-weight:600;
+    font-size:.95rem; border:2px solid transparent; transition:.2s;
+  }
+  .btn-primary{ background:var(--water); color:#fff; }
+  .btn-primary:hover{ background:var(--water-deep); transform:translateY(-1px);}
+  .btn-outline{ border-color:var(--ink); color:var(--ink); }
+  .btn-outline:hover{ background:var(--ink); color:#fff; }
+
+  .hero-badge-wrap{
+    position:relative; display:flex; align-items:center; justify-content:center;
+  }
+  .badge-ring{
+    position:absolute; width:380px; height:380px; border-radius:50%;
+    border:2px dashed var(--sand-line);
+    animation: spin 60s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .hero-badge-wrap img{
+    width:230px; height:auto; filter:drop-shadow(0 18px 30px rgba(74,53,38,.3));
+    position:relative; z-index:2;
+  }
+
+  /* ===== STATS STRIP ===== */
+  .stats{
+    background:var(--ink-deep); color:var(--parchment-soft);
+    padding:34px 28px;
+  }
+  .stats-inner{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;}
+  .stats-inner div b{ display:block; font-family:'Bitter',serif; font-size:1.9rem; color:#fff; }
+  .stats-inner div span{ font-size:.78rem; letter-spacing:.8px; text-transform:uppercase; color:var(--sand-line); }
+
+  /* ===== SECTIONS ===== */
+  section{ padding:78px 0; position:relative; z-index:1; }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--water-deep); margin-bottom:10px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:""; width:26px; height:2px; background:var(--water); }
+  .section-title{ font-size:clamp(1.7rem,2.6vw,2.3rem); margin-bottom:18px; max-width:680px; }
+  .section-lead{ color:var(--ink); max-width:680px; font-size:1.02rem; margin-bottom:40px;}
+
+  /* divider stamp motif */
+  .stamp-divider{ display:flex; align-items:center; gap:14px; margin:0 auto 50px; width:fit-content; }
+  .stamp-divider .dot{ width:8px; height:8px; border-radius:50%; background:var(--water); }
+  .stamp-divider .line{ width:60px; height:1px; background:var(--sand-line); }
+
+  /* about */
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+  .about-grid p{ margin-bottom:16px; color:var(--ink); }
+  .pull-card{
+    background:var(--white); border:1px solid var(--sand-line); border-radius:14px; padding:30px;
+    box-shadow:var(--shadow);
+  }
+  .pull-card h4{ font-size:1.15rem; margin-bottom:10px; }
+  .pull-card p{ font-size:.95rem; color:var(--ink); }
+  .signoff{ font-family:'Bitter',serif; font-style:italic; margin-top:18px; color:var(--water-deep); }
+
+  /* feature cards (sluzby/preteky) */
+  .feature-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .feature-card{
+    background:var(--parchment-soft); border:1px solid var(--sand-line); border-radius:14px; padding:30px;
+    transition:.25s;
+  }
+  .feature-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--water);}
+  .feature-card .num{ font-family:'JetBrains Mono',monospace; color:var(--water); font-size:.85rem; margin-bottom:14px; display:block;}
+  .feature-card h3{ font-size:1.2rem; margin-bottom:10px; }
+  .feature-card p{ font-size:.93rem; color:var(--ink); }
+
+  /* project section (TSK) */
+  .project{ background:var(--sand); }
+  .project-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+  .project p{ color:var(--ink); margin-bottom:14px; font-size:.97rem; }
+  .project-photo{
+    border-radius:14px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/3;
+    background:linear-gradient(135deg, var(--water) 0%, var(--ink) 100%);
+    display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Bitter',serif;
+    font-style:italic; text-align:center; padding:20px;
+  }
+
+  /* contact */
+  .contact{ }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+  .contact-card{ background:var(--white); border:1px solid var(--sand-line); border-radius:16px; padding:40px; box-shadow:var(--shadow);}
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-size:.82rem; font-weight:600; margin-bottom:6px; color:var(--ink-deep);}
+  .field input, .field textarea{
+    width:100%; padding:12px 14px; border:1.5px solid var(--sand-line); border-radius:8px; font-family:inherit;
+    font-size:.94rem; background:var(--parchment-soft); color:var(--charcoal);
+  }
+  .field input:focus, .field textarea:focus{ outline:none; border-color:var(--water); }
+  .phone-box{
+    display:flex; align-items:center; gap:16px; padding:24px 28px; background:var(--ink-deep); border-radius:14px;
+    color:#fff; margin-bottom:24px;
+  }
+  .phone-box b{ font-family:'JetBrains Mono',monospace; font-size:1.3rem; letter-spacing:1px;}
+  .contact-list{ list-style:none; }
+  .contact-list li{ padding:12px 0; border-bottom:1px solid var(--sand-line); display:flex; justify-content:space-between; font-size:.95rem;}
+  .contact-list li b{ font-family:'JetBrains Mono',monospace; font-weight:500; }
+
+  /* footer */
+  footer{ background:var(--ink-deep); color:var(--parchment-soft); padding:50px 0 26px; }
+  .footer-grid{ display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:34px;}
+  .footer-grid h5{ font-family:'Bitter',serif; color:#fff; margin-bottom:14px; font-size:1rem;}
+  .footer-grid a{ display:block; padding:5px 0; font-size:.9rem; color:var(--sand-line); }
+  .footer-grid a:hover{ color:#fff; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12); padding-top:22px; display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:10px; font-size:.82rem; color:var(--sand-line);
+  }
+  .footer-bottom a{ color:var(--sand-line); }
+  .footer-bottom a:hover{ color:#fff; }
+
+  @media(max-width:880px){
+    .nav nav.links{ display:none; }
+    .hero{ grid-template-columns:1fr; }
+    .hero-badge-wrap{ order:-1; }
+    .badge-ring{ width:240px; height:240px; }
+    .hero-badge-wrap img{ width:160px; }
+    .stats-inner{ grid-template-columns:repeat(2,1fr); }
+    .about-grid, .project-grid, .contact-grid{ grid-template-columns:1fr; }
+    .feature-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .badge-ring{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#">
+      <img src="logo.png" alt="Rybárske združenie Záhumnie">
+      <span class="brand-text">RZ Záhumnie<span>Veľké Orvište · od 2009</span></span>
+    </a>
+    <nav class="links">
+      <a href="#domov">Domov</a>
+      <a href="#galeria">Galéria</a>
+      <a href="#udalosti">Udalosti</a>
+      <a href="#ulovky">Úlovky</a>
+      <div class="dropdown">
+        <button>Pre návštevníkov ▾</button>
+        <div class="dropdown-menu">
+          <a href="#">Rybolov</a>
+          <a href="#">Servis</a>
+          <a href="#">Ochrana osobných údajov a GDPR</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button>Pre členov ▾</button>
+        <div class="dropdown-menu">
+          <a href="#">Zoznam našich členov</a>
+          <a href="#">Stanovy združenia</a>
+          <a href="#">Rybársky poriadok</a>
+        </div>
+      </div>
+      <a class="cta-btn" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="domov">
+  <div>
+    <p class="hero-quote">„U nás sa Vám bude páčiť, presvedčte sa sami...“</p>
+    <h1>Rybárske združenie <em>Záhumnie</em></h1>
+    <p class="lead">Sme správcom vodnej plochy Záhumnie v obci Veľké Orvište. Ponúkame športový rybolov nielen členom, ale aj širokej verejnosti — bez rozdielu veku a pohlavia. Príďte si oddýchnuť a zachytiť svoj úlovok.</p>
+    <div class="hero-actions">
+      <a href="#udalosti" class="btn btn-primary">Aktuálne preteky</a>
+      <a href="#kontakt" class="btn btn-outline">Kontaktovať výbor</a>
+    </div>
+  </div>
+  <div class="hero-badge-wrap">
+    <div class="badge-ring"></div>
+    <img src="logo.png" alt="Odznak RZ Záhumnie">
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div><b>2009</b><span>rok založenia</span></div>
+    <div><b>1.8 ha</b><span>vodná plocha</span></div>
+    <div><b>15+</b><span>ročníkov pretekov</span></div>
+    <div><b>0,5–1,5 m</b><span>hĺbka rybníka</span></div>
+  </div>
+</div>
+
+<section id="vitajte">
+  <div class="wrap">
+    <div class="eyebrow">Vitajte na stránke</div>
+    <h2 class="section-title">Rybárske združenie Záhumnie – Veľké Orvište</h2>
+    <div class="about-grid">
+      <div>
+        <p>Rybárske združenie je správcom vodnej plochy Záhumnie v obci Veľké Orvište. Jedná sa o občianske združenie, ktoré si založilo pár priateľov športového rybolovu v obci a na základe povolenia podnikania v zvláštnom režime začalo v roku 2009 svoju činnosť.</p>
+        <p>RZ Záhumnie ponúka možnosť športového rybolovu nielen svojim členom, ale aj širokej verejnosti, bez rozdielu veku a pohlavia. O našich aktivitách svedčí aj viacero akcií organizovaných počas roka.</p>
+        <p>Vôbec nám nevadí, že nie ste registrovaným rybárom. Príďte si aktívne oddýchnuť počas roka a spríjemnite si čas pohodovou rybačkou na našom rybníku podľa našich vlastných pravidiel.</p>
+        <p class="signoff">Tešíme sa na Vašu návštevu.<br>Členovia RZ Záhumnie.</p>
+      </div>
+      <div class="pull-card">
+        <h4>Čas strávený na rybách...</h4>
+        <p>„Čas strávený na rybách se do celkové délky života nepočítá.“ — Jan Werich</p>
+        <hr style="border:none;border-top:1px solid var(--sand-line); margin:20px 0;">
+        <p>„Chytení motýli a ulovené ryby nie sú dôležité, vzrušenie pramení z motýlov a rýb, ktoré nikdy nechytíme.“ — Ernesto Rossi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--parchment-soft); border-top:1px solid var(--sand-line); border-bottom:1px solid var(--sand-line);">
+  <div class="wrap">
+    <div class="eyebrow">Čo u nás nájdete</div>
+    <h2 class="section-title">Preteky, služby a aktivity celoročne</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="num">01 / preteky</span>
+        <h3>Orvišťský blyskáč</h3>
+        <p>Pretekári, ktorí sa zúčastnili jarného prívlačového preteku, majú prednostné právo prihlásiť sa na tento jesenný pretek do konca mesiaca august.</p>
+      </div>
+      <div class="feature-card">
+        <span class="num">02 / servis</span>
+        <h3>Služby pre návštevníkov</h3>
+        <p>V prípade záujmu Vám naše združenie vie zapožičať vybavenie pre rybolov — ideálne aj pre začiatočníkov.</p>
+      </div>
+      <div class="feature-card">
+        <span class="num">03 / preteky</span>
+        <h3>Celoročné preteky</h3>
+        <p>Združenie každoročne organizuje niekoľko druhov pretekov, na ktorých sa môže zúčastniť každý, kto má rád dobrú rybačku a chuť zmerať si sily s inými rybármi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project">
+  <div class="wrap">
+    <div class="eyebrow">Náš projekt</div>
+    <h2 class="section-title">Zveľadenie oddychovo-relaxačného areálu rybník Záhumnie</h2>
+    <div class="project-grid">
+      <div>
+        <p>Trnavský samosprávny kraj sa svojou činnosťou ako partner verejného sektora angažuje aj na poli podpory samosprávy a občianskych združení formou dotačných výziev.</p>
+        <p>Naše občianske združenie, ktoré funguje už 15 rokov, je zamerané na ochranu životného prostredia a obnovu genofondu rýb. Na podporu zmiernenia klimatických zmien sme požiadali o podporu pre projekt „Zveľadenie oddychovo-relaxačného areálu rybník Záhumnie Veľké Orvište“.</p>
+        <p>Pre rozvoj tejto lokality sme uspeli s výzvou na zakúpenie kosačky na úpravu trávnatých plôch a brehov rybníka. Celý projekt sa podarilo zrealizovať v júli 2024 a kosačka od tej doby slúži na revitalizáciu a údržbu okolia rybníka.</p>
+      </div>
+      <div class="project-photo">Fotografia z projektu<br>(nahradí sa skutočnou fotkou cez admin)</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="eyebrow">Rýchly kontakt</div>
+    <h2 class="section-title">Ozvite sa nám</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="field"><label>Meno (povinné)</label><input type="text" placeholder="Vaše meno"></div>
+        <div class="field"><label>Email (povinné)</label><input type="email" placeholder="vas@email.sk"></div>
+        <div class="field"><label>Telefón</label><input type="text" placeholder="+421 ..."></div>
+        <div class="field"><label>Správa (povinné)</label><textarea rows="4" placeholder="Vaša správa..."></textarea></div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;">Odoslať správu</button>
+      </div>
+      <div>
+        <div class="phone-box">
+          <span>📞</span>
+          <div><div style="font-size:.78rem; color:var(--sand-line);">Zavolajte nám</div><b>0903 947 768</b></div>
+        </div>
+        <ul class="contact-list">
+          <li>Vavrinec Peter <b>0911 064 413</b></li>
+          <li>Palkech Marek <b>0944 643 111</b></li>
+          <li>Michel Norbert <b>0907 780 912</b></li>
+          <li>Králik Miroslav <b>0902 106 080</b></li>
+          <li>Email <b>info@rybnikzahumnie.sk</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>RZ Záhumnie</h5>
+        <p style="color:var(--sand-line); font-size:.9rem; max-width:340px;">Rybárske združenie Záhumnie – Veľké Orvište. Občianske združenie od roku 2009.</p>
+      </div>
+      <div>
+        <h5>Navigácia</h5>
+        <a href="#domov">Domov</a>
+        <a href="#galeria">Galéria</a>
+        <a href="#udalosti">Udalosti</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div>
+        <h5>Pre rybárov</h5>
+        <a href="#">Rybolov</a>
+        <a href="#">Pre členov</a>
+        <a href="#">GDPR</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 rybnikzahumnie.sk</span>
+      <span>Vytvoril <a href="#">Libus.sk</a> | <a href="#">KamNaRyby.sk</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
