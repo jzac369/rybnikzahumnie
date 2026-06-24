@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administrácia – RZ Záhumnie</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body{ padding-bottom:60px; }
+  .admin-wrap{ max-width:980px; margin:0 auto; padding:40px 24px; }
+  #login-screen{ max-width:420px; margin:90px auto; }
+  .tabs{ display:flex; gap:8px; margin-bottom:30px; flex-wrap:wrap; border-bottom:1px solid var(--sand-line); padding-bottom:0;}
+  .tab-btn{ padding:12px 18px; border-radius:8px 8px 0 0; border:none; background:none; cursor:pointer; font-weight:600; font-size:.92rem; color:var(--ink); border-bottom:3px solid transparent;}
+  .tab-btn.active{ color:var(--water-deep); border-bottom-color:var(--water);}
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+  .admin-card{ background:var(--white); border:1px solid var(--sand-line); border-radius:14px; padding:26px; margin-bottom:20px; box-shadow:var(--shadow);}
+  .admin-card h3{ font-size:1.05rem; margin-bottom:16px; }
+  .row{ display:flex; gap:12px; flex-wrap:wrap; }
+  .row .field{ flex:1; min-width:120px; }
+  textarea.html-field{ min-height:160px; font-family:'JetBrains Mono', monospace; font-size:.82rem; }
+  .save-msg{ font-size:.85rem; color:var(--water-deep); margin-top:8px; display:none; }
+  .item-row{ display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--sand-line); gap:10px; flex-wrap:wrap;}
+  .item-row:last-child{ border-bottom:none; }
+  .small-btn{ padding:7px 14px; border-radius:6px; font-size:.82rem; font-weight:600; border:1px solid var(--sand-line); background:var(--parchment-soft); cursor:pointer; }
+  .small-btn.danger{ color:#a3372f; border-color:#d8b3ae; }
+  .small-btn:hover{ background:var(--sand); }
+  .topbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;}
+  .pill{ background:var(--water); color:#fff; padding:5px 12px; border-radius:20px; font-size:.78rem; }
+  #seed-status, #app-content{ display:none; }
+</style>
+</head>
+<body>
+
+<header><div class="nav"><a class="brand" href="index.html"><img src="logo.png" alt="logo"><span class="brand-text">RZ Záhumnie<span>Administrácia</span></span></a>
+<nav class="links"><a href="index.html">← Späť na web</a></nav></div></header>
+
+<div id="login-screen" class="admin-wrap">
+  <div class="admin-card">
+    <h3>Prihlásenie do administrácie</h3>
+    <div class="field"><label>Email</label><input type="email" id="login-email" placeholder="admin@rybnikzahumnie.sk"></div>
+    <div class="field"><label>Heslo</label><input type="password" id="login-pass"></div>
+    <button class="btn btn-primary" id="login-btn" style="width:100%; justify-content:center; margin-top:10px;">Prihlásiť sa</button>
+    <p id="login-error" style="color:#a3372f; font-size:.85rem; margin-top:10px; display:none;"></p>
+  </div>
+</div>
+
+<div id="app-content" class="admin-wrap">
+  <div class="topbar">
+    <div><span class="pill">Admin</span> <span id="user-email" style="margin-left:8px; font-size:.9rem; color:var(--ink);"></span></div>
+    <button class="small-btn" id="logout-btn">Odhlásiť sa</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="content">Stránky (text)</button>
+    <button class="tab-btn" data-tab="events">Udalosti</button>
+    <button class="tab-btn" data-tab="catches">Úlovky</button>
+    <button class="tab-btn" data-tab="seed">Prvotné nastavenie</button>
+  </div>
+
+  <!-- CONTENT TAB -->
+  <div class="tab-panel active" id="panel-content">
+    <div class="admin-card">
+      <h3>Domov — úvodný text (hero)</h3>
+      <div class="field"><label>Krátky popis pod nadpisom</label><textarea id="f-home-heroLead" rows="3"></textarea></div>
+      <h3 style="margin-top:20px;">Domov — sekcia "Vitajte"</h3>
+      <textarea id="f-home-vitajte" class="html-field"></textarea>
+      <h3 style="margin-top:20px;">Domov — sekcia "Náš projekt"</h3>
+      <textarea id="f-home-project" class="html-field"></textarea>
+      <button class="btn btn-primary" id="save-home" style="margin-top:14px;">Uložiť stránku Domov</button>
+      <p class="save-msg" id="msg-home">Uložené ✓</p>
+    </div>
+
+    <div class="admin-card">
+      <h3>Kontakt</h3>
+      <div class="row">
+        <div class="field"><label>Adresa</label><input id="f-kontakt-address"></div>
+        <div class="field"><label>Telefón 1</label><input id="f-kontakt-phone1"></div>
+        <div class="field"><label>Telefón 2</label><input id="f-kontakt-phone2"></div>
+        <div class="field"><label>Email</label><input id="f-kontakt-email"></div>
+      </div>
+      <button class="btn btn-primary" id="save-kontakt" style="margin-top:14px;">Uložiť Kontakt</button>
+      <p class="save-msg" id="msg-kontakt">Uložené ✓</p>
+    </div>
+
+    <div class="admin-card">
+      <h3>Ostatné stránky (HTML obsah)</h3>
+      <p style="font-size:.85rem; color:var(--ink); margin-bottom:14px;">Tieto polia obsahujú celý text danej stránky vo formáte HTML (odseky &lt;p&gt;, zoznamy &lt;ul&gt;&lt;li&gt;, zvýraznenie &lt;b&gt;). Ak nie si istý HTML značkám, stačí upraviť text medzi značkami a zvyšok nechať tak.</p>
+      <div id="generic-pages"></div>
+    </div>
+  </div>
+
+  <!-- EVENTS TAB -->
+  <div class="tab-panel" id="panel-events">
+    <div class="admin-card">
+      <h3>Nová udalosť</h3>
+      <div class="row">
+        <div class="field" style="max-width:80px;"><label>Deň</label><input id="ev-day" placeholder="14"></div>
+        <div class="field" style="max-width:80px;"><label>Mesiac</label><input id="ev-month" placeholder="04"></div>
+        <div class="field" style="max-width:100px;"><label>Rok</label><input id="ev-year" placeholder="2026"></div>
+        <div class="field" style="flex:3;"><label>Názov</label><input id="ev-title" placeholder="Názov udalosti"></div>
+      </div>
+      <div class="field"><label>Popis</label><textarea id="ev-excerpt" rows="2"></textarea></div>
+      <button class="btn btn-primary" id="add-event">+ Pridať udalosť</button>
+    </div>
+    <div class="admin-card">
+      <h3>Existujúce udalosti</h3>
+      <div id="events-admin-list"></div>
+    </div>
+  </div>
+
+  <!-- CATCHES TAB -->
+  <div class="tab-panel" id="panel-catches">
+    <div class="admin-card">
+      <h3>Nový úlovok</h3>
+      <div class="row">
+        <div class="field"><label>Meno</label><input id="ct-name"></div>
+        <div class="field"><label>Dátum</label><input id="ct-date" placeholder="17. 6. 2017"></div>
+        <div class="field"><label>Nástraha</label><input id="ct-bait"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Druh</label><input id="ct-species" placeholder="Kapor"></div>
+        <div class="field"><label>Veľkosť</label><input id="ct-size" placeholder="87 cm"></div>
+        <div class="field"><label>Hmotnosť</label><input id="ct-weight" placeholder="13 kg"></div>
+      </div>
+      <button class="btn btn-primary" id="add-catch">+ Pridať úlovok</button>
+    </div>
+    <div class="admin-card">
+      <h3>Existujúce úlovky</h3>
+      <div id="catches-admin-list"></div>
+    </div>
+  </div>
+
+  <!-- SEED TAB -->
+  <div class="tab-panel" id="panel-seed">
+    <div class="admin-card">
+      <h3>Prvotné naplnenie databázy</h3>
+      <p style="font-size:.9rem; color:var(--ink); margin-bottom:16px;">
+        Toto tlačidlo jednorazovo naplní databázu pôvodným obsahom zo starej stránky (texty, ukážkové udalosti a úlovky). Spusti ho len raz, pri prvom nastavení – ak ho spustíš znova, prepíše to už upravený obsah späť na pôvodný text.
+      </p>
+      <button class="btn btn-outline" id="seed-btn">Naplniť databázu pôvodným obsahom</button>
+      <p id="seed-status" style="margin-top:14px; font-size:.88rem;"></p>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { auth, db, doc, getDoc, setDoc, addDoc, updateDoc, deleteDoc, collection, getDocs, query, orderBy, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./assets/firebase-init.js";
+import { SEED_DATA } from "./assets/seed-data.js";
+
+const loginScreen = document.getElementById('login-screen');
+const appContent = document.getElementById('app-content');
+
+document.getElementById('login-btn').addEventListener('click', async () => {
+  const email = document.getElementById('login-email').value.trim();
+  const pass = document.getElementById('login-pass').value;
+  const errEl = document.getElementById('login-error');
+  errEl.style.display = 'none';
+  try {
+    await signInWithEmailAndPassword(auth, email, pass);
+  } catch (e) {
+    errEl.textContent = 'Nesprávny email alebo heslo.';
+    errEl.style.display = 'block';
+  }
+});
+
+document.getElementById('logout-btn').addEventListener('click', () => signOut(auth));
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    loginScreen.style.display = 'none';
+    appContent.style.display = 'block';
+    document.getElementById('user-email').textContent = user.email;
+    initAdmin();
+  } else {
+    loginScreen.style.display = 'block';
+    appContent.style.display = 'none';
+  }
+});
+
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+const GENERIC_PAGES = [
+  {id:'rybolov', label:'Rybolov'},
+  {id:'servis', label:'Servis'},
+  {id:'gdpr', label:'GDPR'},
+  {id:'zoznam-clenov', label:'Zoznam našich členov'},
+  {id:'stanovy', label:'Stanovy združenia'},
+  {id:'poriadok', label:'Rybársky poriadok'},
+];
+
+let initialized = false;
+async function initAdmin() {
+  if (initialized) return;
+  initialized = true;
+
+  // ---- Home page fields ----
+  const homeSnap = await getDoc(doc(db, "pages", "home"));
+  const home = homeSnap.exists() ? homeSnap.data() : {};
+  document.getElementById('f-home-heroLead').value = home.heroLead || '';
+  document.getElementById('f-home-vitajte').value = home.vitajte || '';
+  document.getElementById('f-home-project').value = home.project || '';
+
+  document.getElementById('save-home').addEventListener('click', async () => {
+    await setDoc(doc(db, "pages", "home"), {
+      heroLead: document.getElementById('f-home-heroLead').value,
+      vitajte: document.getElementById('f-home-vitajte').value,
+      project: document.getElementById('f-home-project').value,
+    }, { merge: true });
+    flashMsg('msg-home');
+  });
+
+  // ---- Kontakt fields ----
+  const kSnap = await getDoc(doc(db, "pages", "kontakt"));
+  const k = kSnap.exists() ? kSnap.data() : {};
+  document.getElementById('f-kontakt-address').value = k.address || '';
+  document.getElementById('f-kontakt-phone1').value = k.phone1 || '';
+  document.getElementById('f-kontakt-phone2').value = k.phone2 || '';
+  document.getElementById('f-kontakt-email').value = k.email || '';
+
+  document.getElementById('save-kontakt').addEventListener('click', async () => {
+    await setDoc(doc(db, "pages", "kontakt"), {
+      address: document.getElementById('f-kontakt-address').value,
+      phone1: document.getElementById('f-kontakt-phone1').value,
+      phone2: document.getElementById('f-kontakt-phone2').value,
+      email: document.getElementById('f-kontakt-email').value,
+    }, { merge: true });
+    flashMsg('msg-kontakt');
+  });
+
+  // ---- Generic HTML pages ----
+  const container = document.getElementById('generic-pages');
+  for (const gp of GENERIC_PAGES) {
+    const snap = await getDoc(doc(db, "pages", gp.id));
+    const data = snap.exists() ? snap.data() : {};
+    const wrap = document.createElement('div');
+    wrap.style.marginBottom = '22px';
+    wrap.innerHTML = `
+      <h3>${gp.label}</h3>
+      <textarea class="html-field" id="generic-${gp.id}" rows="8" style="width:100%;"></textarea>
+      <button class="btn btn-outline" style="margin-top:8px;" data-page="${gp.id}">Uložiť ${gp.label}</button>
+      <p class="save-msg" id="msg-${gp.id}">Uložené ✓</p>`;
+    container.appendChild(wrap);
+    document.getElementById(`generic-${gp.id}`).value = data.content || '';
+    wrap.querySelector('button').addEventListener('click', async (e) => {
+      const pid = e.target.dataset.page;
+      await setDoc(doc(db, "pages", pid), { content: document.getElementById(`generic-${pid}`).value }, { merge: true });
+      flashMsg(`msg-${pid}`);
+    });
+  }
+
+  // ---- Events CRUD ----
+  async function renderEvents() {
+    const listEl = document.getElementById('events-admin-list');
+    listEl.innerHTML = 'Načítavam...';
+    const q = query(collection(db, "events"), orderBy("sortDate", "desc"));
+    const snap = await getDocs(q);
+    listEl.innerHTML = '';
+    if (snap.empty) { listEl.innerHTML = '<p style="color:var(--ink); font-size:.9rem;">Žiadne udalosti. Pridaj prvú vyššie.</p>'; return; }
+    snap.forEach(d => {
+      const e = d.data();
+      const row = document.createElement('div');
+      row.className = 'item-row';
+      row.innerHTML = `<div><b>${e.day}/${e.month}/${e.year}</b> — ${e.title}<br><span style="font-size:.85rem; color:var(--ink);">${e.excerpt || ''}</span></div>
+        <button class="small-btn danger" data-id="${d.id}">Zmazať</button>`;
+      row.querySelector('button').addEventListener('click', async () => {
+        if (confirm('Naozaj zmazať túto udalosť?')) { await deleteDoc(doc(db, "events", d.id)); renderEvents(); }
+      });
+      listEl.appendChild(row);
+    });
+  }
+  document.getElementById('add-event').addEventListener('click', async () => {
+    const day = document.getElementById('ev-day').value.trim();
+    const month = document.getElementById('ev-month').value.trim();
+    const year = document.getElementById('ev-year').value.trim();
+    const title = document.getElementById('ev-title').value.trim();
+    const excerpt = document.getElementById('ev-excerpt').value.trim();
+    if (!title || !year) { alert('Vyplň aspoň názov a rok.'); return; }
+    const sortDate = `${year.padStart(4,'0')}-${month.padStart(2,'0')}-${day.padStart(2,'0')}`;
+    await addDoc(collection(db, "events"), { day, month, year, title, excerpt, sortDate });
+    ['ev-day','ev-month','ev-year','ev-title','ev-excerpt'].forEach(id => document.getElementById(id).value = '');
+    renderEvents();
+  });
+  renderEvents();
+
+  // ---- Catches CRUD ----
+  async function renderCatches() {
+    const listEl = document.getElementById('catches-admin-list');
+    listEl.innerHTML = 'Načítavam...';
+    const q = query(collection(db, "catches"), orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    listEl.innerHTML = '';
+    if (snap.empty) { listEl.innerHTML = '<p style="color:var(--ink); font-size:.9rem;">Žiadne úlovky. Pridaj prvý vyššie.</p>'; return; }
+    snap.forEach(d => {
+      const c = d.data();
+      const row = document.createElement('div');
+      row.className = 'item-row';
+      row.innerHTML = `<div><b>${c.name}</b> — ${c.species}, ${c.size}, ${c.weight || ''}<br><span style="font-size:.85rem; color:var(--ink);">${c.date} · ${c.bait || ''}</span></div>
+        <button class="small-btn danger" data-id="${d.id}">Zmazať</button>`;
+      row.querySelector('button').addEventListener('click', async () => {
+        if (confirm('Naozaj zmazať tento úlovok?')) { await deleteDoc(doc(db, "catches", d.id)); renderCatches(); }
+      });
+      listEl.appendChild(row);
+    });
+  }
+  document.getElementById('add-catch').addEventListener('click', async () => {
+    const name = document.getElementById('ct-name').value.trim();
+    const date = document.getElementById('ct-date').value.trim();
+    const bait = document.getElementById('ct-bait').value.trim();
+    const species = document.getElementById('ct-species').value.trim();
+    const size = document.getElementById('ct-size').value.trim();
+    const weight = document.getElementById('ct-weight').value.trim();
+    if (!name || !species) { alert('Vyplň aspoň meno a druh ryby.'); return; }
+    await addDoc(collection(db, "catches"), { name, date, bait, species, size, weight, createdAt: Date.now() });
+    ['ct-name','ct-date','ct-bait','ct-species','ct-size','ct-weight'].forEach(id => document.getElementById(id).value = '');
+    renderCatches();
+  });
+  renderCatches();
+
+  // ---- Seed ----
+  document.getElementById('seed-btn').addEventListener('click', async () => {
+    const statusEl = document.getElementById('seed-status');
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'Naplňujem databázu, prosím počkaj...';
+    try {
+      for (const [pageId, fields] of Object.entries(SEED_DATA.pages)) {
+        await setDoc(doc(db, "pages", pageId), fields, { merge: true });
+      }
+      for (const ev of SEED_DATA.events) {
+        await addDoc(collection(db, "events"), ev);
+      }
+      for (const c of SEED_DATA.catches) {
+        await addDoc(collection(db, "catches"), c);
+      }
+      statusEl.textContent = 'Hotovo! Databáza bola naplnená pôvodným obsahom. ✓';
+      location.reload();
+    } catch (e) {
+      statusEl.textContent = 'Nastala chyba: ' + e.message;
+    }
+  });
+}
+
+function flashMsg(id) {
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 2000);
+}
+</script>
+</body>
+</html>
