@@ -4,6 +4,7 @@ import {
   onAuthStateChanged, signOut
 } from "./firebase-init.js";
 import { SEED_DATA } from "./seed-data.js";
+import { uploadToCloudinary } from "./cloudinary.js";
 
 let quillLoaded = false;
 function loadQuill() {
@@ -282,6 +283,102 @@ async function enableEventsAdmin() {
   render();
 }
 
+// ---------- Inline gallery/album management on galeria.html ----------
+async function enableGalleryAdmin() {
+  const list = document.getElementById('albums-list');
+  if (!list) return;
+
+  const wrap = document.createElement('div');
+  wrap.style.marginBottom = '24px';
+  wrap.innerHTML = `
+    <div class="cms-event-admin-row">
+      <input type="text" placeholder="Názov albumu" id="al-title" style="flex:1;">
+      <input type="text" placeholder="Rok" id="al-year" style="width:90px;">
+      <button class="cms-save-btn" id="al-add-btn">+ Nový album</button>
+    </div>`;
+  list.parentNode.insertBefore(wrap, list);
+
+  wrap.querySelector('#al-add-btn').addEventListener('click', async () => {
+    const title = document.getElementById('al-title').value.trim();
+    const year = document.getElementById('al-year').value.trim();
+    if (!title) { alert('Zadaj názov albumu.'); return; }
+    await addDoc(collection(db, "albums"), { title, year, photos: [], createdAt: Date.now() });
+    document.getElementById('al-title').value = '';
+    document.getElementById('al-year').value = '';
+    renderAlbumsAdmin();
+    toast('Album vytvorený ✓');
+  });
+
+  async function renderAlbumsAdmin() {
+    const q = query(collection(db, "albums"), orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    list.innerHTML = '';
+    if (snap.empty) {
+      list.innerHTML = `<p style="color:var(--ink); font-style:italic;">Zatiaľ žiadne albumy. Vytvor prvý vyššie.</p>`;
+      return;
+    }
+    snap.forEach(docSnap => renderAlbumCard(docSnap.id, docSnap.data()));
+  }
+
+  function renderAlbumCard(id, album) {
+    const photos = album.photos || [];
+    const card = document.createElement('div');
+    card.className = 'feature-card';
+    card.style.gridColumn = 'span 1';
+    card.innerHTML = `
+      <span class="num">${album.year || ''} · ${photos.length} fotiek</span>
+      <h3 style="font-size:1.05rem;">${album.title || ''}</h3>
+      <div class="album-photos-admin" style="display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin:10px 0;"></div>
+      <input type="file" accept="image/*" multiple class="al-file-input" style="font-size:.78rem; margin-bottom:8px;">
+      <div style="display:flex; gap:8px;">
+        <button class="cms-event-delete al-delete-album">Zmazať album</button>
+      </div>
+      <div class="al-upload-status" style="font-size:.78rem; color:var(--water-deep); margin-top:6px;"></div>`;
+    const photosGrid = card.querySelector('.album-photos-admin');
+    photos.forEach((p, idx) => {
+      const ph = document.createElement('div');
+      ph.style.position = 'relative';
+      ph.innerHTML = `<img src="${p.url}" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:5px;">
+        <button class="al-delete-photo" style="position:absolute; top:2px; right:2px; background:#a3372f; color:#fff; border:none; border-radius:4px; font-size:.65rem; padding:1px 5px; cursor:pointer;">✕</button>`;
+      ph.querySelector('.al-delete-photo').addEventListener('click', async () => {
+        const newPhotos = photos.filter((_, i) => i !== idx);
+        await setDoc(doc(db, "albums", id), { photos: newPhotos }, { merge: true });
+        renderAlbumsAdmin();
+      });
+      photosGrid.appendChild(ph);
+    });
+    card.querySelector('.al-delete-album').addEventListener('click', async () => {
+      if (confirm(`Naozaj zmazať album "${album.title}" a všetky jeho fotky?`)) {
+        await deleteDoc(doc(db, "albums", id));
+        renderAlbumsAdmin();
+      }
+    });
+    const fileInput = card.querySelector('.al-file-input');
+    const statusEl = card.querySelector('.al-upload-status');
+    fileInput.addEventListener('change', async () => {
+      const files = Array.from(fileInput.files);
+      if (!files.length) return;
+      statusEl.textContent = `Nahrávam 0/${files.length}...`;
+      const newPhotos = [...photos];
+      for (let i = 0; i < files.length; i++) {
+        try {
+          const url = await uploadToCloudinary(files[i]);
+          newPhotos.push({ url });
+          statusEl.textContent = `Nahrávam ${i + 1}/${files.length}...`;
+        } catch (err) {
+          statusEl.textContent = 'Chyba pri nahrávaní: ' + err.message;
+        }
+      }
+      await setDoc(doc(db, "albums", id), { photos: newPhotos }, { merge: true });
+      statusEl.textContent = `Hotovo ✓ (${newPhotos.length} fotiek v albume)`;
+      renderAlbumsAdmin();
+    });
+    list.appendChild(card);
+  }
+
+  renderAlbumsAdmin();
+}
+
 function enableAdminMode(user) {
   injectStyles();
 
@@ -296,6 +393,7 @@ function enableAdminMode(user) {
 
   enableTextEditing();
   enableEventsAdmin();
+  enableGalleryAdmin();
 }
 
 onAuthStateChanged(auth, user => {
