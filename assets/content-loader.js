@@ -32,6 +32,9 @@ async function loadEvents() {
     list.innerHTML = "";
     snap.forEach(docSnap => {
       const e = docSnap.data();
+      const moreHtml = e.body
+        ? `<details style="margin-top:8px;"><summary style="cursor:pointer; color:var(--water-deep); font-size:.85rem;">Čítať viac</summary><div style="margin-top:10px; font-size:.92rem;">${e.body}</div></details>`
+        : "";
       list.insertAdjacentHTML("beforeend", `
         <div class="feature-card" style="display:flex; gap:22px; align-items:flex-start; margin-bottom:16px;">
           <div class="mono" style="text-align:center; min-width:64px; background:var(--ink-deep); color:#fff; border-radius:10px; padding:10px 6px;">
@@ -41,6 +44,7 @@ async function loadEvents() {
           <div>
             <h3 style="font-size:1.08rem; margin-bottom:6px;">${e.title || ""}</h3>
             <p style="font-size:.92rem; color:var(--ink);">${e.excerpt || ""}</p>
+            ${moreHtml}
           </div>
         </div>`);
     });
