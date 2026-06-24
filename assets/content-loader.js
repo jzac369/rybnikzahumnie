@@ -102,6 +102,13 @@ async function loadMembers() {
 async function loadAlbums() {
   const list = document.getElementById("albums-list");
   if (!list) return;
+  const overlay = document.getElementById("lightbox-overlay");
+  if (overlay && !overlay.dataset.closeBound) {
+    overlay.dataset.closeBound = "1";
+    overlay.addEventListener("click", () => overlay.style.display = "none");
+    const img = document.getElementById("lightbox-img");
+    if (img) img.addEventListener("click", (e) => e.stopPropagation());
+  }
   try {
     const q = query(collection(db, "albums"), orderBy("createdAt", "desc"));
     const snap = await getDocs(q);
@@ -115,7 +122,7 @@ async function loadAlbums() {
       const photos = album.photos || [];
       const cover = photos[0]?.url || "";
       const card = document.createElement("div");
-      card.className = "feature-card";
+      card.className = "feature-card album-card";
       card.style.cursor = "pointer";
       card.innerHTML = `
         ${cover ? `<img src="${cover}" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; margin-bottom:10px;">` : ""}
@@ -124,12 +131,13 @@ async function loadAlbums() {
         <div class="album-photos" style="display:none; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px;"></div>
       `;
       const photosGrid = card.querySelector(".album-photos");
-      photos.forEach(p => {
-        photosGrid.insertAdjacentHTML("beforeend", `<img src="${p.url}" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; cursor:zoom-in;" class="album-photo-thumb">`);
+      photos.forEach((p, idx) => {
+        photosGrid.insertAdjacentHTML("beforeend", `<img src="${p.url}" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; cursor:zoom-in;" class="album-photo-thumb" data-idx="${idx}">`);
       });
       card.addEventListener("click", (e) => {
         if (e.target.classList.contains("album-photo-thumb")) {
-          openLightbox(e.target.src);
+          const idx = parseInt(e.target.dataset.idx, 10);
+          openLightbox(photos, idx);
           return;
         }
         const isOpen = photosGrid.style.display === "grid";
@@ -142,13 +150,53 @@ async function loadAlbums() {
   }
 }
 
-function openLightbox(src) {
-  const overlay = document.getElementById("lightbox-overlay");
+let lightboxPhotos = [];
+let lightboxIndex = 0;
+
+function showLightboxImage() {
   const img = document.getElementById("lightbox-img");
-  if (!overlay || !img) return;
-  img.src = src;
+  if (!img || !lightboxPhotos.length) return;
+  img.src = lightboxPhotos[lightboxIndex].url;
+  const prevBtn = document.getElementById("lightbox-prev");
+  const nextBtn = document.getElementById("lightbox-next");
+  if (prevBtn) prevBtn.style.visibility = lightboxIndex > 0 ? "visible" : "hidden";
+  if (nextBtn) nextBtn.style.visibility = lightboxIndex < lightboxPhotos.length - 1 ? "visible" : "hidden";
+}
+
+function openLightbox(photos, index) {
+  const overlay = document.getElementById("lightbox-overlay");
+  if (!overlay) return;
+  lightboxPhotos = photos;
+  lightboxIndex = index;
+  ensureLightboxControls(overlay);
+  showLightboxImage();
   overlay.style.display = "flex";
-  overlay.onclick = () => overlay.style.display = "none";
+}
+
+function ensureLightboxControls(overlay) {
+  if (document.getElementById("lightbox-prev")) return;
+  const navStyle = "position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.15); color:#fff; border:none; width:52px; height:52px; border-radius:50%; font-size:1.6rem; cursor:pointer; z-index:10;";
+  const prevBtn = document.createElement("button");
+  prevBtn.id = "lightbox-prev";
+  prevBtn.innerHTML = "‹";
+  prevBtn.style = navStyle + "left:18px;";
+  prevBtn.addEventListener("click", (e) => { e.stopPropagation(); if (lightboxIndex > 0) { lightboxIndex--; showLightboxImage(); } });
+
+  const nextBtn = document.createElement("button");
+  nextBtn.id = "lightbox-next";
+  nextBtn.innerHTML = "›";
+  nextBtn.style = navStyle + "right:18px;";
+  nextBtn.addEventListener("click", (e) => { e.stopPropagation(); if (lightboxIndex < lightboxPhotos.length - 1) { lightboxIndex++; showLightboxImage(); } });
+
+  overlay.appendChild(prevBtn);
+  overlay.appendChild(nextBtn);
+
+  document.addEventListener("keydown", (e) => {
+    if (overlay.style.display !== "flex") return;
+    if (e.key === "ArrowLeft" && lightboxIndex > 0) { lightboxIndex--; showLightboxImage(); }
+    if (e.key === "ArrowRight" && lightboxIndex < lightboxPhotos.length - 1) { lightboxIndex++; showLightboxImage(); }
+    if (e.key === "Escape") overlay.style.display = "none";
+  });
 }
 
 loadPageBlocks();
