@@ -99,7 +99,60 @@ async function loadMembers() {
   }
 }
 
+async function loadAlbums() {
+  const list = document.getElementById("albums-list");
+  if (!list) return;
+  try {
+    const q = query(collection(db, "albums"), orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    list.innerHTML = "";
+    if (snap.empty) {
+      list.innerHTML = `<p style="color:var(--ink); font-style:italic;">Galéria je zatiaľ prázdna. Fotky čoskoro doplníme.</p>`;
+      return;
+    }
+    snap.forEach(docSnap => {
+      const album = docSnap.data();
+      const photos = album.photos || [];
+      const cover = photos[0]?.url || "";
+      const card = document.createElement("div");
+      card.className = "feature-card";
+      card.style.cursor = "pointer";
+      card.innerHTML = `
+        ${cover ? `<img src="${cover}" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; margin-bottom:10px;">` : ""}
+        <span class="num">${album.year || ""} · ${photos.length} fotiek</span>
+        <h3 style="font-size:1.05rem;">${album.title || ""}</h3>
+        <div class="album-photos" style="display:none; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px;"></div>
+      `;
+      const photosGrid = card.querySelector(".album-photos");
+      photos.forEach(p => {
+        photosGrid.insertAdjacentHTML("beforeend", `<img src="${p.url}" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; cursor:zoom-in;" class="album-photo-thumb">`);
+      });
+      card.addEventListener("click", (e) => {
+        if (e.target.classList.contains("album-photo-thumb")) {
+          openLightbox(e.target.src);
+          return;
+        }
+        const isOpen = photosGrid.style.display === "grid";
+        photosGrid.style.display = isOpen ? "none" : "grid";
+      });
+      list.appendChild(card);
+    });
+  } catch (e) {
+    console.warn("Galériu sa nepodarilo načítať.", e);
+  }
+}
+
+function openLightbox(src) {
+  const overlay = document.getElementById("lightbox-overlay");
+  const img = document.getElementById("lightbox-img");
+  if (!overlay || !img) return;
+  img.src = src;
+  overlay.style.display = "flex";
+  overlay.onclick = () => overlay.style.display = "none";
+}
+
 loadPageBlocks();
+loadAlbums();
 loadEvents();
 loadCatches();
 loadMembers();
