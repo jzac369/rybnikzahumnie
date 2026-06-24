@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<style>
+  .ql-editor{ min-height:180px; font-family:'Work Sans',sans-serif; font-size:.95rem; background:#fff; }
+  .ql-toolbar.ql-snow{ border-radius:8px 8px 0 0; background:var(--parchment-soft); }
+  .ql-container.ql-snow{ border-radius:0 0 8px 8px; }
+</style>
 <style>
   body{ padding-bottom:60px; }
   .admin-wrap{ max-width:980px; margin:0 auto; padding:40px 24px; }
@@ -68,9 +74,9 @@
       <h3>Domov — úvodný text (hero)</h3>
       <div class="field"><label>Krátky popis pod nadpisom</label><textarea id="f-home-heroLead" rows="3"></textarea></div>
       <h3 style="margin-top:20px;">Domov — sekcia "Vitajte"</h3>
-      <textarea id="f-home-vitajte" class="html-field"></textarea>
+      <div id="quill-home-vitajte"></div>
       <h3 style="margin-top:20px;">Domov — sekcia "Náš projekt"</h3>
-      <textarea id="f-home-project" class="html-field"></textarea>
+      <div id="quill-home-project"></div>
       <button class="btn btn-primary" id="save-home" style="margin-top:14px;">Uložiť stránku Domov</button>
       <p class="save-msg" id="msg-home">Uložené ✓</p>
     </div>
@@ -89,7 +95,7 @@
 
     <div class="admin-card">
       <h3>Ostatné stránky (HTML obsah)</h3>
-      <p style="font-size:.85rem; color:var(--ink); margin-bottom:14px;">Tieto polia obsahujú celý text danej stránky vo formáte HTML (odseky &lt;p&gt;, zoznamy &lt;ul&gt;&lt;li&gt;, zvýraznenie &lt;b&gt;). Ak nie si istý HTML značkám, stačí upraviť text medzi značkami a zvyšok nechať tak.</p>
+      <p style="font-size:.85rem; color:var(--ink); margin-bottom:14px;">Tieto polia obsahujú celý text danej stránky. Píš a formátuj text bežne ako v textovom editore — tučné písmo, zoznamy a nadpisy nastavíš tlačidlami v lište nad textom.</p>
       <div id="generic-pages"></div>
     </div>
   </div>
@@ -148,9 +154,23 @@
   </div>
 </div>
 
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script type="module">
 import { auth, db, doc, getDoc, setDoc, addDoc, updateDoc, deleteDoc, collection, getDocs, query, orderBy, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./assets/firebase-init.js";
 import { SEED_DATA } from "./assets/seed-data.js";
+
+function makeEditor(containerId) {
+  return new Quill('#' + containerId, {
+    theme: 'snow',
+    modules: { toolbar: [
+      [{ header: [3, false] }],
+      ['bold', 'italic', 'underline'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link'],
+      ['clean']
+    ] }
+  });
+}
 
 const loginScreen = document.getElementById('login-screen');
 const appContent = document.getElementById('app-content');
@@ -210,14 +230,17 @@ async function initAdmin() {
   const homeSnap = await getDoc(doc(db, "pages", "home"));
   const home = homeSnap.exists() ? homeSnap.data() : {};
   document.getElementById('f-home-heroLead').value = home.heroLead || '';
-  document.getElementById('f-home-vitajte').value = home.vitajte || '';
-  document.getElementById('f-home-project').value = home.project || '';
+
+  const qVitajte = makeEditor('quill-home-vitajte');
+  const qProject = makeEditor('quill-home-project');
+  qVitajte.clipboard.dangerouslyPasteHTML(home.vitajte || '');
+  qProject.clipboard.dangerouslyPasteHTML(home.project || '');
 
   document.getElementById('save-home').addEventListener('click', async () => {
     await setDoc(doc(db, "pages", "home"), {
       heroLead: document.getElementById('f-home-heroLead').value,
-      vitajte: document.getElementById('f-home-vitajte').value,
-      project: document.getElementById('f-home-project').value,
+      vitajte: qVitajte.root.innerHTML,
+      project: qProject.root.innerHTML,
     }, { merge: true });
     flashMsg('msg-home');
   });
@@ -242,21 +265,25 @@ async function initAdmin() {
 
   // ---- Generic HTML pages ----
   const container = document.getElementById('generic-pages');
+  const genericEditors = {};
   for (const gp of GENERIC_PAGES) {
     const snap = await getDoc(doc(db, "pages", gp.id));
     const data = snap.exists() ? snap.data() : {};
+    const editorId = `quill-generic-${gp.id}`;
     const wrap = document.createElement('div');
     wrap.style.marginBottom = '22px';
     wrap.innerHTML = `
       <h3>${gp.label}</h3>
-      <textarea class="html-field" id="generic-${gp.id}" rows="8" style="width:100%;"></textarea>
+      <div id="${editorId}"></div>
       <button class="btn btn-outline" style="margin-top:8px;" data-page="${gp.id}">Uložiť ${gp.label}</button>
       <p class="save-msg" id="msg-${gp.id}">Uložené ✓</p>`;
     container.appendChild(wrap);
-    document.getElementById(`generic-${gp.id}`).value = data.content || '';
+    const editor = makeEditor(editorId);
+    editor.clipboard.dangerouslyPasteHTML(data.content || '');
+    genericEditors[gp.id] = editor;
     wrap.querySelector('button').addEventListener('click', async (e) => {
       const pid = e.target.dataset.page;
-      await setDoc(doc(db, "pages", pid), { content: document.getElementById(`generic-${pid}`).value }, { merge: true });
+      await setDoc(doc(db, "pages", pid), { content: genericEditors[pid].root.innerHTML }, { merge: true });
       flashMsg(`msg-${pid}`);
     });
   }
